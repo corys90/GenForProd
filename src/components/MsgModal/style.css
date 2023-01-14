@@ -1,0 +1,46 @@
+.modalBody{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+.btnModalReset{
+  width: 183px;
+  height: 45px;
+  text-transform: capitalize;
+  border: 0;
+  background: #F21C1C;
+  color: white;
+}
+
+@media (max-width: 576px) {
+
+  .divImgRelax{
+    display: none;
+  }
+
+  .login{
+    width: 90%;
+  }
+
+  .formularioLogin{
+    width: 90%;
+  }
+}
+
+/* @media (max-width: 744px) {
+
+  .login{
+    width: 100%;
+  }
+
+  .divImgRelax{
+
+    width: 100%;
+  }
+
+  .formularioLogin{
+    width: 95%;
+  }
+} */
