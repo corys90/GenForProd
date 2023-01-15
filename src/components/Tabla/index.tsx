@@ -15,16 +15,16 @@ function Tabla(props: any) {
             <thead >
               <tr className='fontColumnHeader sombra ' >
                 {
-                  props.columHeader.map((title: string, index: number) => <th  key={index}>{title}</th>)
+                  props.columHeader.map((title: string, index: number) => <th className='text-center' key={index}>{title}</th>)
                 }
                 {
-                  <th key={9}><FaEdit/></th>
+                  <th key={9}><FaEdit  className='text-warning text-center'/></th>
                 }
                 {
-                  <th key={10}><FaInfoCircle/></th>
+                  <th key={10}><FaInfoCircle  className='text-primary text-center'/></th>
                 }
                 {
-                  <th key={11}><FaTrashAlt/></th>
+                  <th key={11}><FaTrashAlt className='text-danger text-center'/></th>
                 } 
               </tr>
             </thead>
@@ -36,13 +36,13 @@ function Tabla(props: any) {
                           data.map((value: string, index: number)=> <td key={index}>{value}</td>)
                         }
                         {
-                          <td key={9}><a href='/' onClick={()=> props.edit()}><FaEdit/></a></td>
+                          <td key={9}><a href="#!"  onClick={()=>props.handlerDelete(index)}><FaEdit className='text-warning'/></a></td>
                         }
                         {
-                          <td key={10}><a href='/' onClick={()=> props.info()}><FaInfoCircle/></a></td>
+                          <td key={10}><a href="#!" onClick={()=>props.handlerInfo(index)}><FaInfoCircle className='text-primary'/></a></td>
                         }
                         {
-                          <td key={11}><a href='/' onClick={()=> props.delete()}><FaTrashAlt/></a></td>
+                          <td key={11}><a href="#!" onClick={()=> props.handlerDelete(index)}><FaTrashAlt className='text-danger'/></a></td>
                         }                            
                       </tr>
                     )

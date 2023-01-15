@@ -1,25 +1,28 @@
+import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
-import '../modal/style.css';
-const logo = require('../modal/Vector.png');
+import { FaExclamationCircle } from 'react-icons/fa';
+import './style.css';
 
-function MensajeModal(props: {show: boolean, mensaje: string, email: string, handlerHide: any}) {
+function MensajeModal(props: {show: boolean, mensaje: string, handlerCancel: any, handlerAccept: any}) {
 
   return (
       <div>
             <Modal show={props.show} centered={true} >
                 <Modal.Header >
                     <Modal.Title className='mx-auto'>
-                        <img src={logo} alt="" />
+                        <h1 className='text-danger'>(<FaExclamationCircle/>)</h1>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='mx-auto modalBody'>
                     <label >{props.mensaje}</label>
-                    <strong>{props.email}</strong>
                 </Modal.Body>
                 <Modal.Footer>
-                    <button type="button" className="mx-auto btnModalReset" onClick={() => props.handlerHide()}>
+                    <Button type="button" className="mx-auto btn-danger" onClick={() => props.handlerCancel()}>
+                        Cancelar
+                    </Button>
+                    <Button type="button" className="mx-auto btn-success" onClick={() => props.handlerAccept()}>
                         Aceptar
-                    </button>
+                    </Button>
                 </Modal.Footer>
             </Modal>
       </div>

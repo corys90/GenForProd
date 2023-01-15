@@ -2,29 +2,31 @@ import { useState } from "react";
 import { Button, Modal, Pagination } from "react-bootstrap";
 import BarraUserIn from "../../components/BarraUserIn";
 import FiltroConsumo from "../../components/FiltroConsumo";
+import MsgModal from "../../components/MsgModal";
 import Tabla from "../../components/Tabla";
 import RegistroConsumo from "./RegistroConsumo";
 const imgLeonera = require('./imgLeonera2.png');
 
+const dataUltimosMov: string[][] = [
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$10.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$20.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$30.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$40.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$60.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$70.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$80.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$90.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$11.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$22.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$33.000", "En Proceso"]
+];
 
 const PageConsumo = () => {
 
     const [mostrar, setMostrar] = useState(false);
-
-    const dataUltimosMov: string[][] = [
-        ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-        ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-        ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-        ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-        ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-        ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-        ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-        ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-        ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-        ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-        ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-        ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"]
-    ];
+    const [MsgDialog, setMsgDialog] = useState(false);
+    let [nroItem, setNroItem] = useState(0); 
 
     const Paginacion = (props: any) => {
 
@@ -82,20 +84,35 @@ const PageConsumo = () => {
         );
     }
 
-    const  handlerBtnReestablecer = () => {
-        setMostrar(true);
-      }
-    
-      const handleBtnClose = () =>{ 
-        setMostrar(false);
-      }
-
     const stilo: object = {
         display: "flex", 
         flexDirection: "row", 
         justifyContent: 'center'
     }
+    
+    const handleBtnClose = () =>{ 
+        setMostrar(false);
+    }
 
+    const handlerI = (index: number) =>{ 
+        setMostrar(true);
+    }
+
+    const handlerD = (index: number) => {
+        setNroItem(index);
+        console.log("HandlerD: ", index, nroItem);
+        setMsgDialog(true);
+    }
+
+    const handlerMsgModalCancel = () =>{ 
+        setMsgDialog(false);
+    }   
+
+    const handlerMsgModalAccept = () =>{ 
+        setMsgDialog(false);
+        dataUltimosMov.splice(nroItem, 1);
+    }       
+    
     return(
         <>
            <div style={stilo}>
@@ -122,6 +139,8 @@ const PageConsumo = () => {
                         header="Consumo de Trozos"
                         columHeader={["N° Consumo", "Fecha", "Hora", "Centro","Máquina", "Turno", "Jefe Turno", "Operador"]}
                         data={dataUltimosMov}
+                        handlerInfo={handlerI}
+                        handlerDelete={handlerD}
                     />
                 </div>
                 <div style={stilo}>
@@ -134,6 +153,11 @@ const PageConsumo = () => {
                 </div>
             </div>
             <MensajeModal show={mostrar} handlerHide={() => handleBtnClose()}/>
+            <MsgModal show={MsgDialog}
+                mensaje="¿Esta seguro que desea eliminar el registro de consumo seleccionado? Esta operación es irreversible."
+                handlerCancel={handlerMsgModalCancel}
+                handlerAccept={handlerMsgModalAccept}
+            />
            </div>
         </>
     );

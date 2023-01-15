@@ -84,8 +84,8 @@ const RegistroConsumo = () => {
                             columHeader={["N° Consumo", "Fecha", "Hora", "Centro","Máquina", "Turno", "Jefe Turno", "Operador"]}
                             data={detalles}
                         />
-                        <div className="container-fluid">
-                            <a href="/" style={{color: "white"}} className="btn btn-success">Descargar XLS </a> 
+                        <div className="container-fluid text-start">
+                            <a href="#!" style={{color: "white"}} className="btn btn-success">Descargar XLS </a> 
                         </div> 
                     </form>
                 </div>
