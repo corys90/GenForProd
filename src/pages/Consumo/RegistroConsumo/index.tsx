@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { FaSearch } from "react-icons/fa";
-import Tabla from "../../../components/Tabla";
+import MsgModal from "../../../components/MsgModal";
+import Tabla from "./Tabla";
 
 const Select = () =>{
     return(
@@ -14,15 +15,34 @@ const Select = () =>{
 }
 
 const detalles: string[][] = [
-    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$10.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$20.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$30.000", "En Proceso"],
+    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$40.000", "En Proceso"],
     ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"]
 
 ];
 
 const RegistroConsumo = () => {
+
+    const [msgConfirmRegistro, setMsgConfirmRegistro] = useState(false);
+    const [itemD, setItemD] = useState(0);
+
+    const handlerDeleteRegistroConsumo = (idx: number) =>{
+        setItemD(idx);
+        setMsgConfirmRegistro(true);
+    }
+
+    const handlerMsgModalCancel = () =>{
+        
+        setMsgConfirmRegistro(false);
+    } 
+    
+    const handlerMsgModalAccept = () =>{
+        
+        detalles.splice(itemD, 1);
+        setMsgConfirmRegistro(false);
+    }    
 
     return(
         <>
@@ -83,12 +103,18 @@ const RegistroConsumo = () => {
                             header=""
                             columHeader={["N° Consumo", "Fecha", "Hora", "Centro","Máquina", "Turno", "Jefe Turno", "Operador"]}
                             data={detalles}
+                            handlerDelete={handlerDeleteRegistroConsumo}
                         />
                         <div className="container-fluid text-start">
                             <a href="#!" style={{color: "white"}} className="btn btn-success">Descargar XLS </a> 
                         </div> 
                     </form>
                 </div>
+                <MsgModal show={msgConfirmRegistro}
+                    mensaje="¿Esta seguro que desea eliminar el registro de consumo seleccionado? Esta operación es irreversible."
+                    handlerCancel={handlerMsgModalCancel}
+                    handlerAccept={handlerMsgModalAccept}
+                />
            </div>
         </>
     );

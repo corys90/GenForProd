@@ -5,6 +5,9 @@ import FiltroConsumo from "../../components/FiltroConsumo";
 import MsgModal from "../../components/MsgModal";
 import Tabla from "../../components/Tabla";
 import RegistroConsumo from "./RegistroConsumo";
+import EditarConsumo from "./EditarConsumo"; 
+
+
 const imgLeonera = require('./imgLeonera2.png');
 
 const dataUltimosMov: string[][] = [
@@ -25,6 +28,7 @@ const dataUltimosMov: string[][] = [
 const PageConsumo = () => {
 
     const [mostrar, setMostrar] = useState(false);
+    const [editar, setEditar] = useState(false);
     const [MsgDialog, setMsgDialog] = useState(false);
     let [nroItem, setNroItem] = useState(0); 
 
@@ -58,7 +62,7 @@ const PageConsumo = () => {
         );
     }
 
-    function MensajeModal(props: {show: boolean, handlerHide: any}) {
+    function ModalRegistro(props: {show: boolean, handlerHide: any}) {
 
         return (
             <div>
@@ -84,6 +88,32 @@ const PageConsumo = () => {
         );
     }
 
+    function ModalEditar(props: {show: boolean, handlerHide: any}) {
+
+        return (
+            <div>
+                <Modal show={props.show} centered={true} size="lg" className="bg-dark" style={{opacity: "90%"}}>
+                    <Modal.Header >
+                        <Modal.Title className='mx-auto'>
+                                <h6>Editar Consumo</h6>
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body className='mx-auto modalBody'>
+                        <EditarConsumo />
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button className="btn-primary" onClick={() => props.handlerHide()}>
+                            Cancelar
+                        </Button>
+                        <Button  className="btn-success" onClick={() => props.handlerHide()}>
+                            Guardar
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
+        );
+    }    
+
     const stilo: object = {
         display: "flex", 
         flexDirection: "row", 
@@ -93,6 +123,14 @@ const PageConsumo = () => {
     const handleBtnClose = () =>{ 
         setMostrar(false);
     }
+
+    const handleBtnCloseEditar = () =>{ 
+        setEditar(false);
+    }    
+
+    const handlerE = (index: number) =>{ 
+        setEditar(true);
+    }    
 
     const handlerI = (index: number) =>{ 
         setMostrar(true);
@@ -139,6 +177,7 @@ const PageConsumo = () => {
                         header="Consumo de Trozos"
                         columHeader={["N° Consumo", "Fecha", "Hora", "Centro","Máquina", "Turno", "Jefe Turno", "Operador"]}
                         data={dataUltimosMov}
+                        handlerEdit={handlerE}
                         handlerInfo={handlerI}
                         handlerDelete={handlerD}
                     />
@@ -152,12 +191,14 @@ const PageConsumo = () => {
                     </div>                  
                 </div>
             </div>
-            <MensajeModal show={mostrar} handlerHide={() => handleBtnClose()}/>
+            <ModalRegistro show={mostrar} handlerHide={() => handleBtnClose()}/>
+            <ModalEditar show={editar} handlerHide={() => handleBtnCloseEditar()}/>            
             <MsgModal show={MsgDialog}
                 mensaje="¿Esta seguro que desea eliminar el registro de consumo seleccionado? Esta operación es irreversible."
                 handlerCancel={handlerMsgModalCancel}
                 handlerAccept={handlerMsgModalAccept}
             />
+
            </div>
         </>
     );
