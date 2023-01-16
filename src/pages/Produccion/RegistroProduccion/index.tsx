@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 import MsgModal from "../../../components/MsgModal";
+import EditarMaterial from "../EditarMaterial";
 import Tabla from "./Tabla";
 
 const Select = () =>{
@@ -27,11 +28,43 @@ const RegistProduccion = () => {
 
     const [msgConfirmRegistro, setMsgConfirmRegistro] = useState(false);
     const [itemD, setItemD] = useState(0);
+    const [editMaterial, setEditMaterial] = useState(false);
+
+    function ModalEditarMaterial(props: {show: boolean, handlerHide: any}) {
+
+        return (
+            <div>
+                <Modal show={props.show} centered={true} size="lg" className="bg-secondary" style={{opacity: "95%"}}>
+                    <Modal.Header >
+                        <Modal.Title className='mx-auto'>
+                                <h6>Editar Material</h6>
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body className='mx-auto '>
+                        <EditarMaterial/>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button className="btn-primary" onClick={() => props.handlerHide()}>
+                            Cancelar
+                        </Button>
+                        <Button  className="btn-success" onClick={() => props.handlerHide()}>
+                            Guardar
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
+        );
+    }    
 
     const handlerDeleteRegistroConsumo = (idx: number) =>{
         setItemD(idx);
         setMsgConfirmRegistro(true);
     }
+
+    const handlerEditarRegistroConsumo = (idx: number) =>{
+        setItemD(idx);
+        setEditMaterial(true);
+    }    
 
     const handlerMsgModalCancel = () =>{
         
@@ -42,6 +75,10 @@ const RegistProduccion = () => {
         
         detalles.splice(itemD, 1);
         setMsgConfirmRegistro(false);
+    }    
+
+    const handleBtnCloseEditarMaterial = () =>{ 
+        setEditMaterial(false);
     }    
 
     return(
@@ -132,7 +169,7 @@ const RegistProduccion = () => {
                             columHeader={["Paquete", "Cliente", "Material", "ESP","ANC", "LAR", "CANT", "UM", "VOL"]}
                             data={detalles}
                             handlerPrint={handlerDeleteRegistroConsumo}
-                            handlerEdit={handlerDeleteRegistroConsumo}
+                            handlerEdit={handlerEditarRegistroConsumo}
                             handlerDelete={handlerDeleteRegistroConsumo}
                         />
                         <div className="container-fluid text-start">
@@ -140,6 +177,7 @@ const RegistProduccion = () => {
                         </div> 
                     </form>
                 </div>
+                <ModalEditarMaterial show={editMaterial} handlerHide={() => handleBtnCloseEditarMaterial()}/>
                 <MsgModal show={msgConfirmRegistro}
                     mensaje="¿Esta seguro que desea eliminar el registro de consumo seleccionado? Esta operación es irreversible."
                     handlerCancel={handlerMsgModalCancel}

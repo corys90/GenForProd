@@ -11,7 +11,7 @@ const Select = () =>{
     );
 }
 
-const EditarProduccion= () => {
+const EditarMaterial = () => {
 
     return(
         <>
@@ -19,37 +19,33 @@ const EditarProduccion= () => {
                 <div id="filtro" className="container-fluid " style={{backgroundColor: "white"}}>
                 <form className='row p-3'>
                     <div className="col-4">
-                        <label htmlFor="prod" className="form-label">N° Producción: </label>
-                        <input type="text" className="form-control" id="prod" placeholder="Número de consumo" />
-                    </div>
-                    <div className="col-4">
-                        <label htmlFor="fecha" className="form-label">Fecha: </label>
-                        <input type="date" className="form-control" id="fecha" placeholder="" />
-                    </div>
-                    <div className="col-4">
-                        <label htmlFor="hora" className="form-label">Hora: </label>
-                        <input type="date" className="form-control" id="hora" placeholder="" />
-                    </div>
-                    <div className="col-4">
-                        <label htmlFor="proc" className="form-label">Proceso: </label>
+                        <label htmlFor="family" className="form-label">Familia: </label>
                         <Select/>
                     </div>
                     <div className="col-4">
-                        <label htmlFor="linea" className="form-label">Línea: </label>
+                        <label htmlFor="subFamily" className="form-label">Sub Familia: </label>
                         <Select/>
                     </div>
                     <div className="col-4">
-                        <label htmlFor="maquina" className="form-label">Máquina: </label>
+                        <label htmlFor="material" className="form-label">Material </label>
                         <Select/>
                     </div>
                     <div className="col-4">
-                        <label htmlFor="operador" className="form-label">Turno: </label>
+                        <label htmlFor="espe" className="form-label">Espesor: </label>
                         <Select/>
                     </div>
                     <div className="col-4">
-                        <label htmlFor="turno" className="form-label">Jefe Turno: </label>
+                        <label htmlFor="ancho" className="form-label">Ancho: </label>
                         <Select/>
-                    </div>                 
+                    </div>
+                    <div className="col-4">
+                        <label htmlFor="largo" className="form-label">Largo: </label>
+                        <Select/>
+                    </div>
+                    <div className="col-4">
+                        <label htmlFor="cantidad" className="form-label">Cantidad: </label>
+                        <Select/>
+                    </div>
                 </form>
                 </div>
            </div>
@@ -58,4 +54,4 @@ const EditarProduccion= () => {
 
 }
 
-export default EditarProduccion;
+export default EditarMaterial;

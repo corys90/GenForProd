@@ -125,7 +125,7 @@ const PageProduccion = () => {
 
     const handleBtnCloseEditar = () =>{ 
         setEditar(false);
-    }    
+    }       
 
     const handlerE = (index: number) =>{ 
         setEditar(true);
@@ -191,7 +191,7 @@ const PageProduccion = () => {
                 </div>
             </div>
             <ModalRegistroProd show={mostrar} handlerHide={() => handleBtnClose()}/>
-            <ModalEditar show={editar} handlerHide={() => handleBtnCloseEditar()}/>            
+            <ModalEditar show={editar} handlerHide={() => handleBtnCloseEditar()}/>                           
             <MsgModal show={MsgDialog}
                 mensaje="¿Esta seguro que desea eliminar el registro de consumo seleccionado? Esta operación es irreversible."
                 handlerCancel={handlerMsgModalCancel}
