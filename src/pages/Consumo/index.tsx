@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Modal, Pagination } from "react-bootstrap";
 import BarraUserIn from "../../components/BarraUserIn";
-import FiltroConsumo from "../../components/FiltroConsumo";
+import FiltroConsumo from "./FiltroConsumo";
 import MsgModal from "../../components/MsgModal";
 import Tabla from "../../components/Tabla";
 import RegistroConsumo from "./RegistroConsumo";
@@ -72,7 +72,7 @@ const PageConsumo = () => {
                                 <h6>Registrar Consumo</h6>
                         </Modal.Title>
                     </Modal.Header>
-                    <Modal.Body className='mx-auto modalBody'>
+                    <Modal.Body className='mx-auto '>
                         <RegistroConsumo />
                     </Modal.Body>
                     <Modal.Footer>
