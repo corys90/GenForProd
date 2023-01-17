@@ -153,18 +153,6 @@ const PageProduccion = () => {
     return(
         <>
            <div style={stilo}>
-            <div style={{width: "auto", backgroundColor: "#303742"}}>
-                <div className="pt-4 mt-2" style={stilo}>
-                    <img src={imgLeonera} alt="Leonera" width={"70%"} />
-                </div>
-                <div className="pt-4 mt-2"></div>
-                <div className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a className="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Consumo Trozos</a>
-                    <a className="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Producción</a>
-                    <a className="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Consumo producción</a>
-                    <a className="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Almacen control</a>
-                </div>            
-            </div>
             <div>
                 <BarraUserIn username="Cristian A. Cortes Sarmiento" />
                 <FiltroProduccion />
