@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Container, Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import MsgModal from "../../../components/MsgModal";
 import Tabla from "./Tabla";
 

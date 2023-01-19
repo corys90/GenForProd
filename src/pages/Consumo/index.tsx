@@ -126,8 +126,6 @@ const PageConsumo = () => {
                         handlerDelete={handlerD}
                     />
             </div>
-
-
         );
     }
 

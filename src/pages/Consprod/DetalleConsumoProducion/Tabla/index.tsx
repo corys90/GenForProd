@@ -7,15 +7,15 @@ function Tabla(props: any) {
 
   return (
     <div className='container-fluid'>
-        <div className='fontTitle mb-2'>
+        <div className='mb-4 fw-bold'>
           {props.header}  
         </div>
         <div className='table-responsive'>
-          <Table striped bordered hover className='sombra table-responsive'>
-            <thead >
-              <tr className='fontColumnHeader sombra ' >
+          <Table striped bordered hover className='sombra '>
+            <thead  className='fontColumnHeader' >
+              <tr>
                 {
-                  props.columHeader.map((title: string, index: number) => <th className='text-center' key={index}>{title}</th>)
+                  props.columHeader.map((title: string, index: number) => <th className='text-center fw-bold' key={index}>{title}</th>)
                 }               
               </tr>
             </thead>

@@ -19,10 +19,10 @@ function MensajeModal(props: {show: boolean, mensaje: string, handlerCancel: any
                     <label >{props.mensaje}</label>
                 </Modal.Body>
                 <Modal.Footer className='mx-auto'>
-                        <Button type="button" className="btn-lg btn-success rounded-pill" onClick={() => props.handlerCancel()}>
+                        <Button type="button" className="btn-lg btn-success rounded-pill" onClick={() => props.handlerAccept()}>
                             Aceptar
                         </Button>
-                        <Button type="button" className="btn-lg btn-secondary rounded-pill" onClick={() => props.handlerAccept()}>
+                        <Button type="button" className="btn-lg btn-secondary rounded-pill" onClick={() => props.handlerCancel()}>
                             Cancelar
                         </Button>
                 </Modal.Footer>

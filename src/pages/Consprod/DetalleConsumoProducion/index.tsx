@@ -25,32 +25,31 @@ const DetalleConsumoProducion = () => {
 
     return(
         <>
-           <div className="border m-1">   
-                <label htmlFor="filtro">Detalle Consumo PR</label>  
-                <div id="filtro" className="container-fluid " style={{backgroundColor: "white"}}>
+           <div className=" m-1">   
+                <div id="filtro" className="container-fluid fw-bold" style={{backgroundColor: "white"}}>
                     <form className='row p-3'>
                         <div className="col-4">
-                            <label htmlFor="nlote" className="form-label">N° Lote: </label>
+                            <label htmlFor="nlote" className="form-label">N° Lote</label>
                             <Select/>
                         </div>
                         <div className="col-4">
-                            <label htmlFor="nconsumo" className="form-label">Material: </label>
+                            <label htmlFor="nconsumo" className="form-label">Material</label>
                             <Select/>
                         </div>
                         <div className="col-4">
-                            <label htmlFor="cantidad" className="form-label">Cantidad: </label>
+                            <label htmlFor="cantidad" className="form-label">Cantidad</label>
                             <Select/>
                         </div>
                         <div className="col-4">
-                            <label htmlFor="espesor" className="form-label">Espesor: </label>
+                            <label htmlFor="espesor" className="form-label">Espesor</label>
                             <Select/>
                         </div>
                         <div className="col-4">
-                            <label htmlFor="ancho" className="form-label">Acho: </label>
+                            <label htmlFor="ancho" className="form-label">Acho</label>
                             <Select/>
                         </div>
                         <div className="col-4">
-                            <label htmlFor="largo" className="form-label">Largo: </label>
+                            <label htmlFor="largo" className="form-label">Largo</label>
                             <Select/>
                         </div>              
                     </form>
@@ -60,19 +59,19 @@ const DetalleConsumoProducion = () => {
                     />
                     <form className='row p-3'>
                         <div className="col-6">
-                            <label htmlFor="fecha" className="form-label">Fecha: </label>
+                            <label htmlFor="fecha" className="form-label">Fecha</label>
                             <input type="date" className="form-control" id="fecha" placeholder="" />
                         </div>
                         <div className="col-6">
-                            <label htmlFor="proceso" className="form-label">Proceso: </label>
+                            <label htmlFor="proceso" className="form-label">Proceso</label>
                             <Select/>
                         </div>
                         <div className="col-6">
-                            <label htmlFor="hora" className="form-label">Hora: </label>
+                            <label htmlFor="hora" className="form-label">Hora</label>
                             <input type="date" className="form-control" id="fecha" placeholder="" />
                         </div>
                         <div className="col-6">
-                            <label htmlFor="descripcion" className="form-label">Descripción: </label>
+                            <label htmlFor="descripcion" className="form-label">Descripción</label>
                             <Select/>
                         </div>              
                     </form>                    
