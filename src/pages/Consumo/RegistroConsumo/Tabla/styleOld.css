@@ -1,5 +1,5 @@
 .fontTitle{
-  font-family:  "Open Sans", sans-serif;
+  font-family: 'Ubuntu';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -9,16 +9,22 @@
 }
 
 .fontColumnHeader{
-  font-family:  "Open Sans", sans-serif;
+  font-family: 'Ubuntu';
+  font-style: normal;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  color: #2B2B2B;
 }
 
 .fontRows{
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Ubuntu';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
   color: #2B2B2B;
 }
 

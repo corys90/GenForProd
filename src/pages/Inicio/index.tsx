@@ -17,9 +17,9 @@ const MenuLateralHome = () =>{
                 </div>
                 <div className="pt-4 mt-2"></div>
                 <div className=" text-white" id="v-pills-tab">
-                    <div className="paddLinksDiv  nav-pills active"><NavLink  className="linksDecor" to="/consumo" >Consumo Trozos</NavLink></div>
-                    <div className="paddLinksDiv"><NavLink  className="linksDecor" to="/producion" >Producción</NavLink></div>
-                    <div className="paddLinksDiv"><NavLink  className="linksDecor" to="/consprod" >Consumo producción</NavLink></div>
+                    <NavLink  className="linksDecor" to="/consumo" ><div className="paddLinksDiv hvr-fade">Consumo Trozos</div></NavLink>
+                    <NavLink  className="linksDecor" to="/producion" ><div className="paddLinksDiv hvr-fade">Producción</div></NavLink>
+                    <NavLink  className="linksDecor" to="/consprod" ><div className="paddLinksDiv hvr-fade">Consumo producción</div></NavLink>
                 </div>           
             </div>
         </nav>
@@ -31,7 +31,7 @@ const Home = () => {
 
     return(
         <>
-           <div style={{display: "flex", flexDirection: "row"}}>
+           <div style={{display: "flex", flexDirection: "row", backgroundColor: "#E5E7EB"}}>
                 <BrowserRouter>
                     <MenuLateralHome />
                     <Routes>

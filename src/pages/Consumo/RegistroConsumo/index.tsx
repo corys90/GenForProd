@@ -48,56 +48,57 @@ const RegistroConsumo = () => {
         <>
            <div className="">   
                 <div id="filtro" className="container-fluid " style={{backgroundColor: "white"}}>
-                    <form className='border row p-3'>
+                    <form className='row p-3 fw-bold'>
                         <div className="col-12">
-                            <label htmlFor="nconsumo" className="form-label">N° Consumo: </label>
+                            <label htmlFor="nconsumo" className="form-label">N° Consumo</label>
                             <input type="text" className="form-control" id="fdenconsumosde" placeholder="Número de consumo" />
                         </div>
                         <div className="col-4">
-                            <label htmlFor="fechaConsumo" className="form-label">Fecha: </label>
+                            <label htmlFor="fechaConsumo" className="form-label">Fecha</label>
                             <input type="date" className="form-control" id="fechaConsumo" placeholder="" />
                         </div>
                         <div className="col-4">
-                            <label htmlFor="hora" className="form-label">Hora: </label>
+                            <label htmlFor="hora" className="form-label">Hora</label>
                             <Select/>
                         </div>
                         <div className="col-4">
-                            <label htmlFor="linea" className="form-label">Línea: </label>
+                            <label htmlFor="linea" className="form-label">Línea</label>
                             <Select/>
                         </div>
                         <div className="col-4">
-                            <label htmlFor="maquina" className="form-label">Máquina: </label>
+                            <label htmlFor="maquina" className="form-label">Máquina</label>
                             <Select/>
                         </div>
                         <div className="col-4">
-                            <label htmlFor="truno" className="form-label">Turno: </label>
+                            <label htmlFor="truno" className="form-label">Turno</label>
                             <Select/>
                         </div>
                         <div className="col-4">
-                            <label htmlFor="jefeturno" className="form-label">Jefe turno: </label>
+                            <label htmlFor="jefeturno" className="form-label">Jefe turno</label>
                             <Select/>
                         </div>                  
                     </form>
-                    <form className='border row p-3 '>
-                        <label htmlFor=""><h6>Detalle consumo</h6></label>
+                    <hr />
+                    <form className=' row p-3 fw-bold'>
+                        <label  className='mb-2'><h5 className='fw-bold' >Detalle consumo</h5></label>
                         <div className="col-3">
-                            <label htmlFor="nconsumo" className="form-label">N° Consumo: </label>
+                            <label htmlFor="nconsumo" className="form-label">N° Consumo</label>
                             <input type="text" className="form-control" id="fdenconsumosde" placeholder="N° de consumo" />
                         </div>
                         <div className="col-3">
-                            <label htmlFor="fechaConsumo" className="form-label">Fecha: </label>
+                            <label htmlFor="fechaConsumo" className="form-label">Fecha</label>
                             <input type="date" className="form-control" id="fechaConsumo" placeholder="" />
                         </div>
                         <div className="col-2">
-                            <label htmlFor="hora" className="form-label">Hora: </label>
+                            <label htmlFor="hora" className="form-label">Hora</label>
                             <Select/>
                         </div>
                         <div className="col-2">
-                            <label htmlFor="linea" className="form-label">Línea: </label>
+                            <label htmlFor="linea" className="form-label">Línea</label>
                             <Select/>
                         </div>
                         <div className="col-2 ">
-                            <Button className="btn-g btn-success mt-3" style={{width: "100%"}}>Agregar</Button>
+                            <Button className="btn-success  rounded-pill" style={{width: "100%"}}>Agregar</Button>
                         </div>
                         <Tabla 
                             header=""
@@ -106,7 +107,7 @@ const RegistroConsumo = () => {
                             handlerDelete={handlerDeleteRegistroConsumo}
                         />
                         <div className="container-fluid text-start">
-                            <a href="#!" style={{color: "white"}} className="btn btn-success">Descargar XLS </a> 
+                            <a href="#!" style={{color: "white"}} className="btn btn-success rounded-pill">Descargar XLS </a> 
                         </div> 
                     </form>
                 </div>
