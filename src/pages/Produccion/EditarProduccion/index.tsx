@@ -15,8 +15,8 @@ const EditarProduccion= () => {
 
     return(
         <>
-           <div className="border m-1">   
-                <div id="filtro" className="container-fluid " style={{backgroundColor: "white"}}>
+           <div className=" m-1">   
+                <div id="filtro" className="container-fluid fw-bold" style={{backgroundColor: "white", textAlign: "left"}}>
                 <form className='row p-3'>
                     <div className="col-4">
                         <label htmlFor="prod" className="form-label">N° Producción: </label>

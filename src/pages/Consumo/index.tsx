@@ -192,7 +192,7 @@ const PageConsumo = () => {
             <MsgModal show={MsgDialog}
                     mensaje="¿Esta seguro que desea eliminar el registro de consumo seleccionado? Esta operación es irreversible."
                     handlerCancel={handlerMsgModalCancel}
-                    handlerAccept={handlerMsgModalAccept}
+                handlerAccept={handlerMsgModalAccept}
             />           
         </div>
     );

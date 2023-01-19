@@ -37,18 +37,18 @@ const RegistProduccion = () => {
                 <Modal show={props.show} centered={true} size="lg" className="bg-secondary" style={{opacity: "95%"}}>
                     <Modal.Header >
                         <Modal.Title className='mx-auto'>
-                                <h6>Editar Material</h6>
+                                <h5 className='fw-bold' >Editar Material</h5>
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body className='mx-auto '>
                         <EditarMaterial/>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button className="btn-primary" onClick={() => props.handlerHide()}>
-                            Cancelar
+                        <Button className="btn-success  rounded-pill" onClick={() => props.handlerHide()}>
+                            Aceptar
                         </Button>
-                        <Button  className="btn-success" onClick={() => props.handlerHide()}>
-                            Guardar
+                        <Button  className=" btn-secondary rounded-pill" onClick={() => props.handlerHide()}>
+                            Cancelar
                         </Button>
                     </Modal.Footer>
                 </Modal>
@@ -85,87 +85,88 @@ const RegistProduccion = () => {
         <>
            <div className="">   
                 <div id="filtro" className="container-fluid " style={{backgroundColor: "white"}}>
-                    <form className='border row p-3'>
+                    <form className='row p-3 fw-bold'>
                         <div className="col-3">
-                            <label htmlFor="nprod" className="form-label">N° Producción: </label>
+                            <label htmlFor="nprod" className="form-label">N° Producción</label>
                             <input type="text" className="form-control" id="nprod" placeholder="producción no." />
                         </div>
                         <div className="col-3">
-                            <label htmlFor="fechaProd" className="form-label">Fecha: </label>
+                            <label htmlFor="fechaProd" className="form-label">Fecha</label>
                             <input type="date" className="form-control" id="fechaProd" />
                         </div>
                         <div className="col-3">
-                            <label htmlFor="hora" className="form-label">Hora: </label>
+                            <label htmlFor="hora" className="form-label">Hora</label>
                             <Select/>
                         </div>
                         <div className="col-3">
-                            <label htmlFor="proceso" className="form-label">Proceso: </label>
+                            <label htmlFor="proceso" className="form-label">Proceso</label>
                             <Select/>
                         </div>
                         <div className="col-3">
-                            <label htmlFor="linea" className="form-label">Línea: </label>
+                            <label htmlFor="linea" className="form-label">Línea</label>
                             <Select/>
                         </div>
                         <div className="col-3">
-                            <label htmlFor="maquina" className="form-label">Máquina: </label>
+                            <label htmlFor="maquina" className="form-label">Máquina</label>
                             <Select/>
                         </div>
                         <div className="col-3">
-                            <label htmlFor="truno" className="form-label">Turno: </label>
+                            <label htmlFor="truno" className="form-label">Turno</label>
                             <Select/>
                         </div>
                         <div className="col-3">
-                            <label htmlFor="jefeturno" className="form-label">Jefe turno: </label>
+                            <label htmlFor="jefeturno" className="form-label">Jefe turno</label>
                             <Select/>
                         </div>                  
                     </form>
-                    <form className='border row p-3 '>
-                        <label htmlFor=""><h6>Detalle producción</h6></label>
+                    <hr />
+                    <form className='row p-3 fw-bold'>
+                        <label  className='mb-2'><h5  className='fw-bold'>Detalle producción</h5></label>
                         <div className="col-2">
-                            <label htmlFor="orden" className="form-label">Orden de Compra: </label>
+                            <label htmlFor="orden" className="form-label">Orden de Compra</label>
                             <Select/>
                         </div>
                         <div className="col-2">
-                            <label htmlFor="reponsable" className="form-label">Responsable: </label>
+                            <label htmlFor="reponsable" className="form-label">Responsable</label>
                             <Select/>
                         </div>
                         <div className="col-2">
-                            <label htmlFor="cliente" className="form-label">Cliente: </label>
+                            <label htmlFor="cliente" className="form-label">Cliente</label>
                             <Select/>
                         </div>
                         <div className="col-2">
-                            <label htmlFor="familia" className="form-label">Familia: </label>
+                            <label htmlFor="familia" className="form-label">Familia</label>
                             <Select/>
                         </div>
                         <div className="col-2">
-                            <label htmlFor="subamilia" className="form-label">Sun Familia: </label>
+                            <label htmlFor="subamilia" className="form-label">Sun Familia</label>
                             <Select/>
                         </div>  
                         <div className="col-2">
-                            <label htmlFor="material" className="form-label">Material: </label>
+                            <label htmlFor="material" className="form-label">Material</label>
                             <Select/>
                         </div> 
                         <div className="col-2">
-                            <label htmlFor="espesor" className="form-label">Espesor: </label>
+                            <label htmlFor="espesor" className="form-label">Espesor</label>
                             <Select/>
                         </div>   
                         <div className="col-2">
-                            <label htmlFor="ancho" className="form-label">Ancho: </label>
+                            <label htmlFor="ancho" className="form-label">Ancho</label>
                             <Select/>
                         </div>       
                         <div className="col-2">
-                            <label htmlFor="largo" className="form-label">Largo: </label>
+                            <label htmlFor="largo" className="form-label">Largo</label>
                             <Select/>
                         </div>     
                         <div className="col-2">
-                            <label htmlFor="cantidad" className="form-label">Cantidad: </label>
+                            <label htmlFor="cantidad" className="form-label">Cantidad</label>
                             <Select/>
                         </div>                              
                         <div className="col-2 ">
-                            <Button className="btn-g btn-success mt-3" style={{width: "100%"}}>Agregar</Button>
+                            <Button className="btn-success  rounded-pill mt-4" style={{width: "100%"}}>Agregar</Button>
                         </div>
                         <div className="mt-3"></div>
-                        <Tabla className="mt-2" header=""
+                        <Tabla  header=""
                             columHeader={["Paquete", "Cliente", "Material", "ESP","ANC", "LAR", "CANT", "UM", "VOL"]}
                             data={detalles}
                             handlerPrint={handlerDeleteRegistroConsumo}
@@ -173,7 +174,7 @@ const RegistProduccion = () => {
                             handlerDelete={handlerDeleteRegistroConsumo}
                         />
                         <div className="container-fluid text-start">
-                            <a href="#!" style={{color: "white"}} className="btn btn-success">Descargar XLS </a> 
+                            <a href="#!" style={{color: "white"}} className="btn btn-success rounded-pill">Descargar XLS </a> 
                         </div> 
                     </form>
                 </div>

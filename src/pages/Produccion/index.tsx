@@ -1,13 +1,11 @@
 import { useState } from "react";
-import { Button, Modal, Pagination } from "react-bootstrap";
+import { Button, Container, Modal, Pagination } from "react-bootstrap";
 import BarraUserIn from "../../components/BarraUserIn";
 import FiltroProduccion from "../Produccion/FiltroProduccion";
 import MsgModal from "../../components/MsgModal";
 import Tabla from "../../components/Tabla";
 import RegistroProduccion from "./RegistroProduccion";
 import EditarProduccion from "./EditarProduccion"; 
-
-const imgLeonera = require('./imgLeonera2.png');
 
 const dataUltimosMov: string[][] = [
     ["Prod001", "24-10-2023", "Batuco", "Fl_Bat_01", "Asserradero", "Máquina_1", "Línea 1", "Turno 1", "Juna Pérez", "Cristian A. Cortes S."],
@@ -68,18 +66,18 @@ const PageProduccion = () => {
                 <Modal show={props.show} centered={true} size="xl" >
                     <Modal.Header >
                         <Modal.Title className='mx-auto'>
-                                <h6>Registrar Producción</h6>
+                                <h5  className='fw-bold' >Registrar Producción</h5>
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body className='mx-auto '>
                         <RegistroProduccion />
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button className="btn-primary" onClick={() => props.handlerHide()}>
-                            Cancelar
+                        <Button className="btn-success  rounded-pill" onClick={() => props.handlerHide()}>
+                            Aceptar
                         </Button>
-                        <Button  className="btn-success" onClick={() => props.handlerHide()}>
-                            Guardar
+                        <Button  className=" btn-secondary rounded-pill" onClick={() => props.handlerHide()}>
+                            Cancel
                         </Button>
                     </Modal.Footer>
                 </Modal>
@@ -94,24 +92,45 @@ const PageProduccion = () => {
                 <Modal show={props.show} centered={true} size="lg" className="bg-dark" style={{opacity: "90%"}}>
                     <Modal.Header >
                         <Modal.Title className='mx-auto'>
-                                <h6>Editar Producción</h6>
+                                <h5 className='fw-bold' >Editar Producción</h5>
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body className='mx-auto '>
                         <EditarProduccion />
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button className="btn-primary" onClick={() => props.handlerHide()}>
-                            Cancelar
+                        <Button className="btn-success  rounded-pill" onClick={() => props.handlerHide()}>
+                            Aceptar
                         </Button>
-                        <Button  className="btn-success" onClick={() => props.handlerHide()}>
-                            Guardar
+                        <Button  className=" btn-secondary rounded-pill" onClick={() => props.handlerHide()}>
+                            Cancelar
                         </Button>
                     </Modal.Footer>
                 </Modal>
             </div>
         );
-    }    
+    }   
+    
+    const TablaProduccion = () => {
+
+        return(
+            <div>
+                    <div className="container d-flex flex-row-reverse">
+                        <Button className="btn-success rounded-pill" onClick={()=>{setMostrar(true)}}> + Registrar</Button> 
+                    </div>
+                    <Tabla 
+                        header="Registro de Producción"
+                        columHeader={["N° Prod.", "Fecha", "Planta", "Centro", "Proceso", "Máquina", "Línea", "Turno", "Jefe Turno", "Operador"]}
+                        data={dataUltimosMov}                        
+                        handlerEdit={handlerE}
+                        handlerInfo={handlerI}
+                        handlerDelete={handlerD}
+                    />                
+            </div>
+
+        );
+
+    } 
 
     const stilo: object = {
         display: "flex", 
@@ -151,33 +170,24 @@ const PageProduccion = () => {
     }       
     
     return(
-        <>
-           <div style={stilo}>
-            <div>
-                <BarraUserIn username="Cristian A. Cortes Sarmiento" />
-                <FiltroProduccion />
-                <div>
-                    <div className="container d-flex flex-row-reverse">
-                        <Button className="btn-success " onClick={()=>{setMostrar(true)}}> + Registrar</Button> 
-                    </div>
-                    <Tabla 
-                        header="Registro de Producción"
-                        columHeader={["N° Prod.", "Fecha", "Planta", "Centro", "Proceso", "Máquina", "Línea", "Turno", "Jefe Turno", "Operador"]}
-                        data={dataUltimosMov}                        
-                        handlerEdit={handlerE}
-                        handlerInfo={handlerI}
-                        handlerDelete={handlerD}
-                    />
+
+        <div>
+            <BarraUserIn username="Cristian A. Cortes Sarmiento" />
+            <div className="ps-3 m-3"><h3 className="border-5 border-start border-success ps-3">Producción</h3></div>
+            <Container>
+                <div className="bg-light rounded-2" >
+                    <FiltroProduccion />
+                    <TablaProduccion />
+                    <div style={stilo}>
+                        <div className="container">
+                            <a href="/" style={{color: "white"}} className="btn btn-success">Descargar XLS </a> 
+                        </div>   
+                        <div>
+                            <Paginacion active={1} />
+                        </div>                  
+                    </div>                        
                 </div>
-                <div style={stilo}>
-                    <div className="container-fluid">
-                        <a href="/" style={{color: "white"}} className="btn btn-success">Descargar XLS </a> 
-                    </div>   
-                    <div>
-                        <Paginacion active={1} />
-                    </div>                  
-                </div>
-            </div>
+            </Container>
             <ModalRegistroProd show={mostrar} handlerHide={() => handleBtnClose()}/>
             <ModalEditar show={editar} handlerHide={() => handleBtnCloseEditar()}/>                           
             <MsgModal show={MsgDialog}
@@ -186,8 +196,8 @@ const PageProduccion = () => {
                 handlerAccept={handlerMsgModalAccept}
             />
 
-           </div>
-        </>
+        </div>
+
     );
 }
 

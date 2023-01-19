@@ -15,15 +15,15 @@ const EditarMaterial = () => {
 
     return(
         <>
-           <div className="border m-1">   
-                <div id="filtro" className="container-fluid " style={{backgroundColor: "white"}}>
+           <div className="">   
+                <div id="filtro" className="container-fluid fw-bold" style={{backgroundColor: "white"}}>
                 <form className='row p-3'>
                     <div className="col-4">
-                        <label htmlFor="family" className="form-label">Familia: </label>
+                        <label htmlFor="family" className="form-label">Familia </label>
                         <Select/>
                     </div>
                     <div className="col-4">
-                        <label htmlFor="subFamily" className="form-label">Sub Familia: </label>
+                        <label htmlFor="subFamily" className="form-label">Sub Familia </label>
                         <Select/>
                     </div>
                     <div className="col-4">
@@ -31,19 +31,19 @@ const EditarMaterial = () => {
                         <Select/>
                     </div>
                     <div className="col-4">
-                        <label htmlFor="espe" className="form-label">Espesor: </label>
+                        <label htmlFor="espe" className="form-label">Espesor </label>
                         <Select/>
                     </div>
                     <div className="col-4">
-                        <label htmlFor="ancho" className="form-label">Ancho: </label>
+                        <label htmlFor="ancho" className="form-label">Ancho </label>
                         <Select/>
                     </div>
                     <div className="col-4">
-                        <label htmlFor="largo" className="form-label">Largo: </label>
+                        <label htmlFor="largo" className="form-label">Largo </label>
                         <Select/>
                     </div>
                     <div className="col-4">
-                        <label htmlFor="cantidad" className="form-label">Cantidad: </label>
+                        <label htmlFor="cantidad" className="form-label">Cantidad </label>
                         <Select/>
                     </div>
                 </form>
