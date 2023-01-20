@@ -29,6 +29,8 @@ const RegistProduccion = () => {
     const [msgConfirmRegistro, setMsgConfirmRegistro] = useState(false);
     const [itemD, setItemD] = useState(0);
     const [editMaterial, setEditMaterial] = useState(false);
+    const [MsgDialogImp, setMsgDialogImp] = useState(false);  
+    const [MsgDialogImpLote, setMsgDialogImpLote] = useState(false);      
 
     function ModalEditarMaterial(props: {show: boolean, handlerHide: any}) {
 
@@ -79,7 +81,32 @@ const RegistProduccion = () => {
 
     const handleBtnCloseEditarMaterial = () =>{ 
         setEditMaterial(false);
-    }    
+    }   
+    
+    const handlerMsgModalImpCancel = () =>{ 
+        setMsgDialogImp(false);
+    }  
+    
+    const handlerMsgModalImpAccept = () =>{ 
+        setMsgDialogImp(false);
+    }      
+
+    const handlerImp = () =>{ 
+        setMsgDialogImp(true);
+    } 
+    
+     const handlerMsgModalImpLoteCancel = () =>{ 
+        setMsgDialogImpLote(false);
+    }  
+    
+    const handlerMsgModalImpLoteAccept = () =>{ 
+        setMsgDialogImpLote(false);
+    }   
+    
+
+    const handlerImpLote = () =>{ 
+        setMsgDialogImpLote(true);
+    }  
 
     return(
         <>
@@ -122,19 +149,19 @@ const RegistProduccion = () => {
                     <hr />
                     <form className='row p-3 '>
                         <label  className='mb-2'><h5  className='fw-bold'>Detalle producción</h5></label>
-                        <div className="col-2">
+                        <div className="col-3">
                             <label htmlFor="orden" className="form-label">Orden de Compra</label>
                             <Select/>
                         </div>
-                        <div className="col-2">
+                        <div className="col-3">
                             <label htmlFor="reponsable" className="form-label">Responsable</label>
                             <Select/>
                         </div>
-                        <div className="col-2">
+                        <div className="col-3">
                             <label htmlFor="cliente" className="form-label">Cliente</label>
                             <Select/>
                         </div>
-                        <div className="col-2">
+                        <div className="col-3">
                             <label htmlFor="familia" className="form-label">Familia</label>
                             <Select/>
                         </div>
@@ -163,27 +190,37 @@ const RegistProduccion = () => {
                             <Select/>
                         </div>                              
                         <div className="col-2 ">
-                            <Button className="btn-success  mt-4" style={{width: "100%"}}>Agregar</Button>
+                            <Button className="btn-success  mt-4" style={{width: "100%"}}>Nuevo detalle</Button>
                         </div>
                         <div className="mt-3"></div>
-                        <Tabla  header=""
+                        <Tabla  
                             columHeader={["Paquete", "Cliente", "Material", "ESP","ANC", "LAR", "CANT", "UM", "VOL"]}
                             data={detalles}
-                            handlerPrint={handlerDeleteRegistroConsumo}
+                            handlerPrint={handlerImpLote}
                             handlerEdit={handlerEditarRegistroConsumo}
                             handlerDelete={handlerDeleteRegistroConsumo}
                         />
                         <div className="container-fluid text-start">
-                            <a href="#!" style={{color: "white"}} className="btn btn-success ">Descargar XLS </a> 
+                            <a href="#!" style={{color: "white"}} className="btn btn-success "  onClick={()=>handlerImp()}>Descargar XLS </a> 
                         </div> 
                     </form>
                 </div>
                 <ModalEditarMaterial show={editMaterial} handlerHide={() => handleBtnCloseEditarMaterial()}/>
                 <MsgModal show={msgConfirmRegistro}
-                    mensaje="¿Esta seguro que desea eliminar el registro de consumo seleccionado? Esta operación es irreversible."
+                    mensaje="¿Está seguro de eliminar esta fila?"
                     handlerCancel={handlerMsgModalCancel}
                     handlerAccept={handlerMsgModalAccept}
                 />
+                <MsgModal show={MsgDialogImp}
+                    mensaje="¿Está seguro que desea descargar Registro de Consumo?"
+                    handlerCancel={handlerMsgModalImpCancel}
+                    handlerAccept={handlerMsgModalImpAccept}
+                />    
+                <MsgModal show={MsgDialogImpLote}
+                    mensaje="¿Desea imprimir etiqueta de lote de producción?"
+                    handlerCancel={handlerMsgModalImpLoteCancel}
+                    handlerAccept={handlerMsgModalImpLoteAccept}
+                />                               
            </div>
         </>
     );

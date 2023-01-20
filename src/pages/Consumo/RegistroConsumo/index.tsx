@@ -26,6 +26,7 @@ const detalles: string[][] = [
 const RegistroConsumo = () => {
 
     const [msgConfirmRegistro, setMsgConfirmRegistro] = useState(false);
+    const [msgConfirmDescarga, setMsgConfirmDescarga] = useState(false);    
     const [itemD, setItemD] = useState(0);
 
     const handlerDeleteRegistroConsumo = (idx: number) =>{
@@ -33,16 +34,30 @@ const RegistroConsumo = () => {
         setMsgConfirmRegistro(true);
     }
 
+    const handlerModalDescarga = () =>{
+        setMsgConfirmDescarga(true);
+    }    
+
     const handlerMsgModalCancel = () =>{
         
         setMsgConfirmRegistro(false);
+    } 
+
+    const handlerMsgModalCancelDescarga = () =>{
+        
+        setMsgConfirmDescarga(false);
     } 
     
     const handlerMsgModalAccept = () =>{
         
         detalles.splice(itemD, 1);
         setMsgConfirmRegistro(false);
-    }    
+    }   
+    
+    const handlerMsgModalAcceptDescarga = () =>{
+        
+        setMsgConfirmDescarga(false);
+    }       
 
     return(
         <>
@@ -89,16 +104,16 @@ const RegistroConsumo = () => {
                             <label htmlFor="fechaConsumo" className="form-label">Fecha</label>
                             <input type="date" className="form-control" id="fechaConsumo" placeholder="" />
                         </div>
-                        <div className="col-2">
+                        <div className="col-3">
                             <label htmlFor="hora" className="form-label">Hora</label>
                             <Select/>
                         </div>
-                        <div className="col-2">
+                        <div className="col-3">
                             <label htmlFor="linea" className="form-label">Línea</label>
                             <Select/>
                         </div>
-                        <div className="col-2 ">
-                            <Button className="btn-success " style={{width: "100%"}}>Agregar</Button>
+                        <div className="col-2 mt-3">
+                            <Button className="btn-success " style={{width: "100%"}}>Nuevo consumo</Button>
                         </div>
                         <Tabla 
                             header=""
@@ -107,15 +122,20 @@ const RegistroConsumo = () => {
                             handlerDelete={handlerDeleteRegistroConsumo}
                         />
                         <div className="container-fluid text-start">
-                            <a href="#!" style={{color: "white"}} className="btn btn-success">Descargar XLS </a> 
+                            <a href="#!" style={{color: "white"}}  onClick={()=> handlerModalDescarga()} className="btn btn-success">Descargar XLS </a> 
                         </div> 
                     </form>
                 </div>
                 <MsgModal show={msgConfirmRegistro}
-                    mensaje="¿Esta seguro que desea eliminar el registro de consumo seleccionado? Esta operación es irreversible."
+                    mensaje="¿Está seguro de eliminar esta fila?"
                     handlerCancel={handlerMsgModalCancel}
                     handlerAccept={handlerMsgModalAccept}
                 />
+                <MsgModal show={msgConfirmDescarga}
+                    mensaje="¿Está seguro que desea descargar Registro de Consumo?"
+                    handlerCancel={handlerMsgModalCancelDescarga}
+                    handlerAccept={handlerMsgModalAcceptDescarga}
+                />                
            </div>
         </>
     );

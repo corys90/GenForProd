@@ -13,65 +13,41 @@ function Tabla(props: any) {
             <thead>
               <tr >
                 {
-                  props.columHeader.map((title: string, index: number) => <th className='text-center fw-bold ' key={index}>{title}</th>)
+                  props.columHeader.map((title: string, index: number) => <th className='text-center ' key={index}>{title}</th>)
                 }
                 {
-                  <th key={9}>
-                    <div className='bg-success align-middle text-center rounded-circle '  style={{width: "30px", height: "30px"}}>
-                      <BsFillEyeFill title="Código" color={'white'} className='action mt-1 ' size={20}/>
-                    </div>
-                  </th>
+                  <th key={9}>Acción</th>
                 }
-                {
-                  <th key={10}  className='text-center' >
-                    <div className='bg-primary align-middle text-center rounded-circle '  style={{width: "30px", height: "30px"}}>
-                      <BsFillPencilFill title="Código" color={'white'} className='action mt-1 ' size={20}/>
-                    </div>               
-                  </th>
-                }
-                {
-                  <th key={11} className='text-center' >
-                    <div className='bg-danger align-middle text-center rounded-circle '  style={{width: "30px", height: "30px"}}>
-                      <BsFillTrashFill title="Código" color={'white'} className='action mt-1 ' size={18}/>
-                    </div>                     
-                  </th>
-                } 
               </tr>
             </thead>
-            <tbody className="fontRows">
+            <tbody  style={{fontSize: "14px"}} >
                 {
                     props.data.map((data: string[], index: number) => 
                       <tr key={index}>
                         {
-                          data.map((value: string, index: number)=> <td  key={index}>{value}</td>)
+                          data.map((value: string, index: number)=> <td key={index}>{value}</td>)
                         }
                         {
-                          <td key={9} className='text-center' >
-                            <a href="#!"  onClick={()=>props.handlerEdit(index)}>
-                                <div className='bg-success align-middle text-center rounded-circle '  style={{width: "30px", height: "30px"}}>
-                                  <BsFillEyeFill title="Código" color={'white'} className='action mt-1 ' size={20}/>
-                                </div>
-                            </a>
+                          <td key={9} >
+                            <div className=' d-flex gap-2 align-item-middle' >
+                                <a href="#!" onClick={()=>props.handlerInfo(index)}>
+                                  <div className='align-middle text-center'  style={{width: "30px", height: "30px"}}>
+                                    <BsFillEyeFill title="Ver" color={'white'}  className='bg-success rounded-circle p-1 h3'/>  
+                                  </div>
+                                </a>                                  
+                                <a href="#!" onClick={()=>props.handlerEdit(index)}>
+                                  <div className='align-middle text-center'  style={{width: "30px", height: "30px"}}>  
+                                    <BsFillPencilFill title="Código" color={'white'}  className='bg-primary rounded-circle p-1 h3'/>   
+                                  </div>
+                                </a>                                      
+                                <a href="#!" onClick={()=>props.handlerDelete(index)}>
+                                  <div className='align-middle text-center'  style={{width: "30px", height: "30px"}}>
+                                    <BsFillTrashFill title="Código" color={'white'}   className='bg-danger rounded-circle p-1 h3'/>
+                                  </div>   
+                                </a>                                                                                         
+                            </div>
                           </td>
-                        }
-                        {
-                          <td key={10} className='text-center' >
-                            <a href="#!" onClick={()=>props.handlerInfo(index)}>
-                              <div className='bg-primary align-middle text-center rounded-circle '  style={{width: "30px", height: "30px"}}>
-                                <BsFillPencilFill title="Código" color={'white'} className='action mt-1 ' size={20}/>
-                              </div>  
-                            </a>
-                          </td>
-                        }
-                        {
-                          <td key={11} className='text-center' >
-                            <a href="#!" onClick={()=> props.handlerDelete(index)}>
-                              <div className='bg-danger align-middle text-center rounded-circle '  style={{width: "30px", height: "30px"}}>
-                                <BsFillTrashFill title="Código" color={'white'} className='action mt-1 ' size={18}/>
-                              </div>                               
-                            </a>
-                          </td>
-                        }                            
+                        }                           
                       </tr>
                     )
                 }

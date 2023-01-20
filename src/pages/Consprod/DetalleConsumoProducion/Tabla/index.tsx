@@ -17,7 +17,7 @@ function Tabla(props: any) {
                 }               
               </tr>
             </thead>
-            <tbody className='fontRows'>
+            <tbody  style={{fontSize: "14px"}}>
                 {
                     props.data.map((data: string[], index: number) => 
                       <tr key={index}>

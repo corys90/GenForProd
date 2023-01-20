@@ -19,14 +19,14 @@ function Tabla(props: any) {
                 }
                 {
                   <th key={11} className='' >
-                    <div className='bg-danger align-middle text-center rounded-circle '  style={{height: "30px", width:"30px"}}>
-                      <BsFillTrashFill title="Código" color={'white'} className='action mt-1 ' size={18}/>
+                    <div  >
+                      Acción
                     </div>
                   </th>
                 }
               </tr>
             </thead>
-            <tbody className='fontRows'>
+            <tbody style={{fontSize: "14px"}}>
                 {
                     props.data.map((data: string[], index: number) => 
                       <tr key={index}>

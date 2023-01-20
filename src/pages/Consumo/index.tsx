@@ -3,9 +3,9 @@ import { Button, Container, Modal, Pagination } from "react-bootstrap";
 import BarraUserIn from "../../components/BarraUserIn";
 import FiltroConsumo from "./FiltroConsumo";
 import MsgModal from "../../components/MsgModal";
-import Tabla from "../../components/Tabla";
 import RegistroConsumo from "./RegistroConsumo";
 import EditarConsumo from "./EditarConsumo"; 
+import Tabla from '../../components/Tabla';
 
 const dataUltimosMov: string[][] = [
     ["Forestal Leonera", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$10.000", "En Proceso"],
@@ -27,6 +27,7 @@ const PageConsumo = () => {
     const [mostrar, setMostrar] = useState(false);
     const [editar, setEditar] = useState(false);
     const [MsgDialog, setMsgDialog] = useState(false);
+    const [MsgDialogImp, setMsgDialogImp] = useState(false);    
     let [nroItem, setNroItem] = useState(0); 
 
     const Paginacion = (props: any) => {
@@ -154,7 +155,6 @@ const PageConsumo = () => {
 
     const handlerD = (index: number) => {
         setNroItem(index);
-        console.log("HandlerD: ", index, nroItem);
         setMsgDialog(true);
     }
 
@@ -165,7 +165,19 @@ const PageConsumo = () => {
     const handlerMsgModalAccept = () =>{ 
         setMsgDialog(false);
         dataUltimosMov.splice(nroItem, 1);
-    }       
+    }  
+
+    const handlerMsgModalImpCancel = () =>{ 
+        setMsgDialogImp(false);
+    }  
+    
+    const handlerMsgModalImpAccept = () =>{ 
+        setMsgDialogImp(false);
+    }      
+
+    const handlerImp = () =>{ 
+        setMsgDialogImp(true);
+    }      
     
     return(
         <div >
@@ -177,7 +189,7 @@ const PageConsumo = () => {
                     <TablaConsumo/>
                     <div style={stilo}>
                         <div className="container">
-                            <a href="/" style={{color: "white"}} className="btn btn-success">Descargar XLS </a> 
+                            <a href="#!" style={{color: "white"}} className="btn btn-success" onClick={()=>handlerImp()}>Descargar XLS </a> 
                         </div>   
                         <div>
                             <Paginacion active={1} />
@@ -188,10 +200,15 @@ const PageConsumo = () => {
             <ModalRegistro show={mostrar} handlerHide={() => handleBtnClose()}/>
             <ModalEditar show={editar} handlerHide={() => handleBtnCloseEditar()}/>            
             <MsgModal show={MsgDialog}
-                    mensaje="¿Esta seguro que desea eliminar el registro de consumo seleccionado? Esta operación es irreversible."
+                    mensaje="¿Está seguro de eliminar esta fila?"
                     handlerCancel={handlerMsgModalCancel}
                 handlerAccept={handlerMsgModalAccept}
-            />           
+            />    
+             <MsgModal show={MsgDialogImp}
+                mensaje="¿Está seguro que desea descargar Registro de Consumo?"
+                handlerCancel={handlerMsgModalImpCancel}
+                handlerAccept={handlerMsgModalImpAccept}
+            />         
         </div>
     );
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { FaBarcode } from "react-icons/fa";
 import MsgModal from "../../../components/MsgModal";
+import MensajeModalCB from "../../../components/MsgModalCB";
 import DetalleConsumoProducion from "../DetalleConsumoProducion";
 import Tabla from "./Tabla";
 
@@ -29,6 +30,8 @@ const RegistroConsumoProduccion = () => {
 
     const [msgConfirmRegistro, setMsgConfirmRegistro] = useState(false);
     const [itemD, setItemD] = useState(0);
+    const [MsgDialogImp, setMsgDialogImp] = useState(false); 
+    const [MsgDialogImpCB, setMsgDialogImpCB] = useState(false); 
     const [editDetalleConsumoPR, setEditDetalleConsumoPR] = useState(false);
 
     function ModalEditarDetallePR(props: {show: boolean, handlerHide: any}) {
@@ -80,13 +83,34 @@ const RegistroConsumoProduccion = () => {
 
     const handleBtnCloseEditarMaterial = () =>{ 
         setEditDetalleConsumoPR(false);
+    } 
+    
+    const handlerMsgModalImpCancel = () =>{ 
+        setMsgDialogImp(false);
+    }  
+    
+    const handlerMsgModalImpAccept = () =>{ 
+        setMsgDialogImp(false);
+    }      
+
+    const handlerImp = () =>{ 
+        setMsgDialogImp(true);
     }    
+
+    const handlerCapturar = () =>{ 
+        setMsgDialogImpCB(true);
+    }     
+    
+     const handlerMsgModalImpConfirmar = () =>{ 
+        setMsgDialogImpCB(false);
+    }      
+   
 
     return(
         <>
            <div className="">   
                 <div id="filtro" className="container-fluid " style={{backgroundColor: "white"}}>
-                    <form className='row p-3 fw-bold'>
+                    <form className='row p-3'>
                         <div className="col-4">
                             <label htmlFor="oc" className="form-label">N° OC</label>
                             <Select/>
@@ -133,27 +157,37 @@ const RegistroConsumoProduccion = () => {
                             <h1 id="cb"><FaBarcode/></h1>                                                     
                         </div> 
                         <div className="col-2 ">
-                            <Button className="btn-success " style={{width: "100%"}}>Capturar</Button>
+                            <Button className="btn-success " style={{width: "100%"}} onClick={()=> handlerCapturar()}>Capturar</Button>
                         </div>   
                         <div className="mt-3"></div>
-                        <Tabla className="mt-2" header=""
+                        <Tabla
+                            header=""
                             columHeader={["N° Lote", "Material", "OC", "ESP","ANC", "LAR", "CANT", "UM", "VOL", "B", "E", "S", "D", "C"]}
                             data={detalles}
-                            handlerPrint={handlerDeleteRegistroConsumo}
+                            handlerPrint={handlerCapturar}
                             handlerEdit={handlerEditarDetalleConsumoPR}
                             handlerDelete={handlerDeleteRegistroConsumo}
                         />
                         <div className="container-fluid text-start">
-                            <a href="#!" style={{color: "white"}} className="btn btn-success">Descargar XLS </a> 
+                            <a href="#!" style={{color: "white"}} className="btn btn-success" onClick={()=>handlerImp()}>Descargar XLS </a> 
                         </div> 
                     </form>
                 </div>
                 <ModalEditarDetallePR show={editDetalleConsumoPR} handlerHide={() => handleBtnCloseEditarMaterial()}/>
                 <MsgModal show={msgConfirmRegistro}
-                    mensaje="¿Esta seguro que desea eliminar el registro de consumo seleccionado? Esta operación es irreversible."
+                    mensaje="¿Está seguro de eliminar esta fila?"
                     handlerCancel={handlerMsgModalCancel}
                     handlerAccept={handlerMsgModalAccept}
                 />
+                <MsgModal show={MsgDialogImp}
+                    mensaje="¿Está seguro que desea descargar Registro de Consumo?"
+                    handlerCancel={handlerMsgModalImpCancel}
+                    handlerAccept={handlerMsgModalImpAccept}
+                />      
+                <MensajeModalCB show={MsgDialogImpCB}
+                    mensaje="Capturar Lote"
+                    handlerAccept={handlerMsgModalImpConfirmar}
+                />                              
            </div>
         </>
     );
