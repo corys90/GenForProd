@@ -1,12 +1,7 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
 import { BsFillEyeFill, BsFillTrashFill } from 'react-icons/bs';
 import { FaPrint } from 'react-icons/fa';
 import './style.css';
-
-const imgEdit = require('./edit.png');
-const imgView = require('./view.png');
-const imgDelete = require('./delete.png');
 
 function Tabla(props: any) {
 
