@@ -9,7 +9,7 @@ function Tabla(props: any) {
           {props.header}  
         </div>
         <div className='table-responsive'>
-          <table  className='table  table-hover'>
+          <table  className='table table-hover table-bordered '>
             <thead>
               <tr >
                 {
@@ -38,12 +38,12 @@ function Tabla(props: any) {
                 } 
               </tr>
             </thead>
-            <tbody>
+            <tbody className="fontRows">
                 {
                     props.data.map((data: string[], index: number) => 
                       <tr key={index}>
                         {
-                          data.map((value: string, index: number)=> <td className='fontRows' key={index}>{value}</td>)
+                          data.map((value: string, index: number)=> <td  key={index}>{value}</td>)
                         }
                         {
                           <td key={9} className='text-center' >

@@ -11,7 +11,7 @@ function Tabla(props: any) {
           {props.header}  
         </div>
         <div className='table-responsive'>
-          <Table bordered striped hover className='sombra'>
+          <table   className='table table-hover table-bordered'>
             <thead  className='fontColumnHeader' >
               <tr>
                 {
@@ -46,7 +46,7 @@ function Tabla(props: any) {
                     )
                 }
             </tbody>
-          </Table>
+          </table>
         </div>
     </div> 
   );

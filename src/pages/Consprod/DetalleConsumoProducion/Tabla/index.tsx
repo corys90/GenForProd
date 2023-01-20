@@ -1,5 +1,4 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
 import './style.css';
 
 function Tabla(props: any) {
@@ -10,7 +9,7 @@ function Tabla(props: any) {
           {props.header}  
         </div>
         <div className='table-responsive'>
-          <Table striped bordered hover className='sombra '>
+          <table   className='table table-hover table-bordered'>
             <thead  className='fontColumnHeader' >
               <tr>
                 {
@@ -29,7 +28,7 @@ function Tabla(props: any) {
                     )
                 }
             </tbody>
-          </Table>
+          </table>
         </div>
     </div> 
   );

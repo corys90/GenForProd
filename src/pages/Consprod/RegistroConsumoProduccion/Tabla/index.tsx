@@ -11,7 +11,7 @@ function Tabla(props: any) {
           {props.header}  
         </div>
         <div className='table-responsive'>
-          <table className='table table table-hover '>
+          <table className='table table table-hover table-bordered '>
             <thead >
               <tr className='fontColumnHeader ' >
                 {
