@@ -1,8 +1,7 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import { BsFillTrashFill } from 'react-icons/bs';
 import './style.css';
-
-const imgDelete = require('./delete.png');
 
 function Tabla(props: any) {
 
@@ -19,7 +18,11 @@ function Tabla(props: any) {
                   props.columHeader.map((title: string, index: number) => <th  className='text-center ' key={index}>{title}</th>)
                 }
                 {
-                  <th key={11} className='' ><img src={imgDelete} alt="Borrar" width="24px" height="24px"/></th>
+                  <th key={11} className='' >
+                    <div className='bg-danger align-middle text-center rounded-circle '  style={{height: "30px", width:"30px"}}>
+                      <BsFillTrashFill title="Código" color={'white'} className='action mt-1 ' size={18}/>
+                    </div>
+                  </th>
                 }
               </tr>
             </thead>
@@ -31,7 +34,13 @@ function Tabla(props: any) {
                           data.map((value: string, index: number)=> <td key={index}>{value}</td>)
                         }
                         {
-                          <td key={11}><a href="#!" onClick={()=> props.handlerDelete(index)}><img src={imgDelete} alt="Borrar" width="24px" height="24px"/></a></td>
+                          <td key={11}>
+                              <a href="#!" onClick={()=> props.handlerDelete(index)}>
+                                <div className='bg-danger align-middle text-center rounded-circle '  style={{height: "30px", width:"30px"}}>
+                                    <BsFillTrashFill title="Código" color={'white'} className='action mt-1 ' size={18}/>
+                                </div>
+                              </a>
+                          </td>
                         }                            
                       </tr>
                     )

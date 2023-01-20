@@ -16,7 +16,7 @@ const EditarConsumoProduccion= () => {
     return(
         <>
            <div className=" m-1">   
-                <div id="filtro" className="container-fluid  fw-bold" style={{backgroundColor: "white"}}>
+                <div id="filtro" className="container-fluid " style={{backgroundColor: "white"}}>
                 <form className='row p-3'>
                     <div className="col-4">
                         <label htmlFor="oc" className="form-label">N° OC</label>

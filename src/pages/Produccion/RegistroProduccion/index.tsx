@@ -36,18 +36,18 @@ const RegistProduccion = () => {
             <div>
                 <Modal show={props.show} centered={true} size="lg" className="bg-secondary" style={{opacity: "95%"}}>
                     <Modal.Header >
-                        <Modal.Title className='mx-auto'>
-                                <h5 className='fw-bold' >Editar Material</h5>
+                        <Modal.Title >
+                                <h3>Editar Material</h3>
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body className='mx-auto '>
                         <EditarMaterial/>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button className="btn-success  rounded-pill" onClick={() => props.handlerHide()}>
+                        <Button className="btn-success " onClick={() => props.handlerHide()}>
                             Aceptar
                         </Button>
-                        <Button  className=" btn-secondary rounded-pill" onClick={() => props.handlerHide()}>
+                        <Button  className=" btn-secondary " onClick={() => props.handlerHide()}>
                             Cancelar
                         </Button>
                     </Modal.Footer>
@@ -85,7 +85,7 @@ const RegistProduccion = () => {
         <>
            <div className="">   
                 <div id="filtro" className="container-fluid " style={{backgroundColor: "white"}}>
-                    <form className='row p-3 fw-bold'>
+                    <form className='row p-3 '>
                         <div className="col-3">
                             <label htmlFor="nprod" className="form-label">N° Producción</label>
                             <input type="text" className="form-control" id="nprod" placeholder="producción no." />
@@ -120,7 +120,7 @@ const RegistProduccion = () => {
                         </div>                  
                     </form>
                     <hr />
-                    <form className='row p-3 fw-bold'>
+                    <form className='row p-3 '>
                         <label  className='mb-2'><h5  className='fw-bold'>Detalle producción</h5></label>
                         <div className="col-2">
                             <label htmlFor="orden" className="form-label">Orden de Compra</label>
@@ -163,7 +163,7 @@ const RegistProduccion = () => {
                             <Select/>
                         </div>                              
                         <div className="col-2 ">
-                            <Button className="btn-success  rounded-pill mt-4" style={{width: "100%"}}>Agregar</Button>
+                            <Button className="btn-success  mt-4" style={{width: "100%"}}>Agregar</Button>
                         </div>
                         <div className="mt-3"></div>
                         <Tabla  header=""
@@ -174,7 +174,7 @@ const RegistProduccion = () => {
                             handlerDelete={handlerDeleteRegistroConsumo}
                         />
                         <div className="container-fluid text-start">
-                            <a href="#!" style={{color: "white"}} className="btn btn-success rounded-pill">Descargar XLS </a> 
+                            <a href="#!" style={{color: "white"}} className="btn btn-success ">Descargar XLS </a> 
                         </div> 
                     </form>
                 </div>

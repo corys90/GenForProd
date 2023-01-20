@@ -16,7 +16,7 @@ const EditarMaterial = () => {
     return(
         <>
            <div className="">   
-                <div id="filtro" className="container-fluid fw-bold" style={{backgroundColor: "white"}}>
+                <div id="filtro" className="container-fluid " style={{backgroundColor: "white"}}>
                 <form className='row p-3'>
                     <div className="col-4">
                         <label htmlFor="family" className="form-label">Familia </label>

@@ -37,18 +37,18 @@ const RegistroConsumoProduccion = () => {
             <div>
                 <Modal show={props.show} centered={true} size="lg" className="bg-secondary" style={{opacity: "95%"}}>
                     <Modal.Header >
-                        <Modal.Title className='mx-auto'>
-                                <h5 className="fw-bold" >Detalle consumo PR</h5>
+                        <Modal.Title >
+                                <h3 >Detalle consumo PR</h3>
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body className='mx-auto '>
                         <DetalleConsumoProducion/>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button className="btn-success  rounded-pill" onClick={() => props.handlerHide()}>
+                        <Button className="btn-success " onClick={() => props.handlerHide()}>
                             Aceptar
                         </Button>
-                        <Button  className=" btn-secondary rounded-pill" onClick={() => props.handlerHide()}>
+                        <Button  className=" btn-secondary " onClick={() => props.handlerHide()}>
                             Cancelar
                         </Button>
                     </Modal.Footer>
@@ -133,7 +133,7 @@ const RegistroConsumoProduccion = () => {
                             <h1 id="cb"><FaBarcode/></h1>                                                     
                         </div> 
                         <div className="col-2 ">
-                            <Button className="btn-success rounded-pill" style={{width: "100%"}}>Capturar</Button>
+                            <Button className="btn-success " style={{width: "100%"}}>Capturar</Button>
                         </div>   
                         <div className="mt-3"></div>
                         <Tabla className="mt-2" header=""

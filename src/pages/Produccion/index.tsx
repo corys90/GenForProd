@@ -65,18 +65,18 @@ const PageProduccion = () => {
             <div>
                 <Modal show={props.show} centered={true} size="xl" >
                     <Modal.Header >
-                        <Modal.Title className='mx-auto'>
-                                <h5  className='fw-bold' >Registrar Producción</h5>
+                        <Modal.Title>
+                                <h3>Registrar Producción</h3>
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body className='mx-auto '>
                         <RegistroProduccion />
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button className="btn-success  rounded-pill" onClick={() => props.handlerHide()}>
+                        <Button className="btn-success " onClick={() => props.handlerHide()}>
                             Aceptar
                         </Button>
-                        <Button  className=" btn-secondary rounded-pill" onClick={() => props.handlerHide()}>
+                        <Button  className=" btn-secondary " onClick={() => props.handlerHide()}>
                             Cancel
                         </Button>
                     </Modal.Footer>
@@ -91,18 +91,18 @@ const PageProduccion = () => {
             <div>
                 <Modal show={props.show} centered={true} size="lg" className="bg-dark" style={{opacity: "90%"}}>
                     <Modal.Header >
-                        <Modal.Title className='mx-auto'>
-                                <h5 className='fw-bold' >Editar Producción</h5>
+                        <Modal.Title >
+                                <h3>Editar Producción</h3>
                         </Modal.Title>
                     </Modal.Header>
-                    <Modal.Body className='mx-auto '>
+                    <Modal.Body className='mx-auto  modalBody '>
                         <EditarProduccion />
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button className="btn-success  rounded-pill" onClick={() => props.handlerHide()}>
+                        <Button className="btn-success " onClick={() => props.handlerHide()}>
                             Aceptar
                         </Button>
-                        <Button  className=" btn-secondary rounded-pill" onClick={() => props.handlerHide()}>
+                        <Button  className=" btn-secondary " onClick={() => props.handlerHide()}>
                             Cancelar
                         </Button>
                     </Modal.Footer>
@@ -115,8 +115,8 @@ const PageProduccion = () => {
 
         return(
             <div>
-                    <div className="container d-flex flex-row-reverse">
-                        <Button className="btn-success rounded-pill" onClick={()=>{setMostrar(true)}}> + Registrar</Button> 
+                    <div className="d-flex m-3">
+                        <Button className="btn-success " onClick={()=>{setMostrar(true)}}>Nueva Producción</Button> 
                     </div>
                     <Tabla 
                         header="Registro de Producción"
@@ -170,10 +170,9 @@ const PageProduccion = () => {
     }       
     
     return(
-
         <div>
             <BarraUserIn username="Cristian A. Cortes Sarmiento" />
-            <div className="ps-3 m-3"><h3 className="border-5 border-start border-success ps-3">Producción</h3></div>
+            <div className="ps-0 m-3 font-bold "><h2 className="border-5 border-start border-success ps-2">Producción</h2></div>
             <Container>
                 <div className="bg-light rounded-2" >
                     <FiltroProduccion />

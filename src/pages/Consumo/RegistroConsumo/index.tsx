@@ -48,7 +48,7 @@ const RegistroConsumo = () => {
         <>
            <div className="">   
                 <div id="filtro" className="container-fluid " style={{backgroundColor: "white"}}>
-                    <form className='row p-3 fw-bold'>
+                    <form className='row p-3'>
                         <div className="col-12">
                             <label htmlFor="nconsumo" className="form-label">N° Consumo</label>
                             <input type="text" className="form-control" id="fdenconsumosde" placeholder="Número de consumo" />
@@ -79,7 +79,7 @@ const RegistroConsumo = () => {
                         </div>                  
                     </form>
                     <hr />
-                    <form className=' row p-3 fw-bold'>
+                    <form className=' row p-3'>
                         <label  className='mb-2'><h5 className='fw-bold' >Detalle consumo</h5></label>
                         <div className="col-3">
                             <label htmlFor="nconsumo" className="form-label">N° Consumo</label>
@@ -98,7 +98,7 @@ const RegistroConsumo = () => {
                             <Select/>
                         </div>
                         <div className="col-2 ">
-                            <Button className="btn-success  rounded-pill" style={{width: "100%"}}>Agregar</Button>
+                            <Button className="btn-success " style={{width: "100%"}}>Agregar</Button>
                         </div>
                         <Tabla 
                             header=""
@@ -107,7 +107,7 @@ const RegistroConsumo = () => {
                             handlerDelete={handlerDeleteRegistroConsumo}
                         />
                         <div className="container-fluid text-start">
-                            <a href="#!" style={{color: "white"}} className="btn btn-success rounded-pill">Descargar XLS </a> 
+                            <a href="#!" style={{color: "white"}} className="btn btn-success">Descargar XLS </a> 
                         </div> 
                     </form>
                 </div>

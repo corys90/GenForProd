@@ -16,7 +16,7 @@ const FiltroProduccion = () => {
 
     return(
         <>
-            <form className='row p-3 fw-bold '>
+            <form className='row p-3'>
                 <label htmlFor="filtro" className="mb-4 " >Filtro Consumo PR</label>  
                 <div className="col-3">
                     <label htmlFor="fDesde" className="form-label">Período Desde</label>
@@ -58,7 +58,7 @@ const FiltroProduccion = () => {
                     <label htmlFor="search" className="form-label">Buscar</label>
                     <div style={{display: "flex", flexDirection: "row"}}>
                         <input type="text" className="form-control" id="search" placeholder="Buscar" />
-                        <Button ><FaSearch/> </Button>
+                        <Button  className="bg-success border-0"><FaSearch/> </Button>
                     </div>
                 </div>                    
             </form>

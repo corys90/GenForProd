@@ -11,7 +11,7 @@ const MenuLateralHome = () =>{
 
     return (
         <nav className="">
-            <div style={{backgroundColor: "#303742", width: "256px", height: "100%"}}>
+            <div style={{backgroundColor: "#303742", width: "290px", height: "100%"}}>
                 <div>
                     <img src={imgLeonera} alt="Leonera" style={{width: "65%", height:"auto"}} className="mt-3 ms-4"/>
                 </div>

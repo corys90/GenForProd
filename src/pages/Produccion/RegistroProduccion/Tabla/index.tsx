@@ -1,11 +1,8 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-import { FaInfoCircle, FaPrint, FaTrashAlt } from 'react-icons/fa';
+import { BsFillPencilFill, BsFillTrashFill } from 'react-icons/bs';
+import { FaPrint, FaTrashAlt } from 'react-icons/fa';
 import './style.css';
-
-const imgEdit = require('./edit.png');
-const imgView = require('./view.png');
-const imgDelete = require('./delete.png');
 
 function Tabla(props: any) {
 
@@ -25,10 +22,18 @@ function Tabla(props: any) {
                   <td key={10}><FaPrint className='text-dark h5'/></td>
                 }                         
                 {
-                  <td key={11}><img src={imgEdit} alt="Editar" width="24px" height="24px"/></td>
+                  <td key={11}>
+                    <div className='bg-primary align-middle text-center rounded-circle '  style={{height: "30px"}}>
+                      <BsFillPencilFill title="Código" color={'white'} className='action mt-1 ' size={20}/>
+                    </div>  
+                  </td>
                 }                        
                 {
-                  <td key={12}><img src={imgDelete} alt="Borrar" width="24px" height="24px"/></td>
+                  <td key={12}>
+                    <div className='bg-danger align-middle text-center rounded-circle '  style={{height: "30px"}}>
+                      <BsFillTrashFill title="Código" color={'white'} className='action mt-1 ' size={18}/>
+                    </div> 
+                  </td>
                 }                
               </tr>
             </thead>
@@ -43,10 +48,22 @@ function Tabla(props: any) {
                           <td key={10}><a href="#!" onClick={()=> props.handlerPrint(index)}><FaPrint className='text-dark h5'/></a></td>
                         }                         
                         {
-                          <td key={11}><a href="#!" onClick={()=> props.handlerEdit(index)}><img src={imgEdit} alt="Editar" width="24px" height="24px"/></a></td>
+                          <td key={11}>
+                            <a href="#!" onClick={()=> props.handlerEdit(index)}>
+                              <div className='bg-primary align-middle text-center rounded-circle '  style={{height: "30px"}}>
+                                <BsFillPencilFill title="Código" color={'white'} className='action mt-1 ' size={20}/>
+                              </div> 
+                            </a>
+                          </td>
                         }                        
                         {
-                          <td key={12}><a href="#!" onClick={()=> props.handlerDelete(index)}><img src={imgDelete} alt="Borrar" width="24px" height="24px"/></a></td>
+                          <td key={12}>
+                            <a href="#!" onClick={()=> props.handlerDelete(index)}>
+                              <div className='bg-danger align-middle text-center rounded-circle '  style={{height: "30px"}}>
+                                <BsFillTrashFill title="Código" color={'white'} className='action mt-1 ' size={18}/>
+                              </div> 
+                             </a>
+                          </td>
                         }
                       </tr>
                     )

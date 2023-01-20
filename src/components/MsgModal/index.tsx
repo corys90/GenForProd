@@ -9,21 +9,18 @@ function MensajeModal(props: {show: boolean, mensaje: string, handlerCancel: any
       <div>
             <Modal show={props.show} centered={true} >
                 <Modal.Header >
-                    <Modal.Title className='mx-auto'>
+                    <Modal.Title className=' text-center'>
                         {                        
-                        //<h1 className='text-danger'>(<FaExclamationCircle/>)</h1>
+                            props.mensaje
                         }
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body className='mx-auto modalBody'>
-                    <label >{props.mensaje}</label>
-                </Modal.Body>
                 <Modal.Footer className='mx-auto'>
-                        <Button type="button" className="btn-lg btn-success rounded-pill" onClick={() => props.handlerAccept()}>
-                            Aceptar
-                        </Button>
-                        <Button type="button" className="btn-lg btn-secondary rounded-pill" onClick={() => props.handlerCancel()}>
+                        <Button type="button" className="btn-md btn-secondary me-3" onClick={() => props.handlerCancel()}>
                             Cancelar
+                        </Button>
+                        <Button type="button" className="ms-3 btn-md btn-success" onClick={() => props.handlerAccept()}>
+                            Aceptar
                         </Button>
                 </Modal.Footer>
             </Modal>
