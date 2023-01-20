@@ -40,12 +40,12 @@ function Tabla(props: any) {
                               </a>
                               <a href="#!" onClick={()=> props.handlerEdit(index)}>
                                 <div className='bg-primary align-middle text-center rounded-circle '  style={{width: "30px", height: "30px"}}>
-                                  <BsFillPencilFill title="Código" color={'white'} className='action mt-1 ' />
+                                  <BsFillPencilFill title="" color={'white'} className='action mt-1 ' />
                                 </div> 
                               </a>
                               <a href="#!" onClick={()=> props.handlerDelete(index)}>
                                 <div className='bg-danger align-middle text-center rounded-circle '  style={{width: "30px", height: "30px"}}>
-                                  <BsFillTrashFill title="Código" color={'white'} className='action mt-1 ' size={18}/>
+                                  <BsFillTrashFill title="" color={'white'} className='action mt-1 ' size={18}/>
                                 </div> 
                               </a> 
                             </div>                             

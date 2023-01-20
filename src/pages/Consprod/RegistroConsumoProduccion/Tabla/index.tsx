@@ -13,27 +13,13 @@ function Tabla(props: any) {
         <div className='table-responsive'>
           <table className='table table table-hover table-bordered '>
             <thead >
-              <tr className='fontColumnHeader ' >
+              <tr >
                 {
                   props.columHeader.map((title: string, index: number) => <th className='text-center' key={index}>{title}</th>)
                 }
                 {
-                  <td key={10}><FaPrint className='text-dark h4'/></td>
-                }                         
-                {
-                  <td key={11}>
-                    <div className='bg-success align-middle text-center rounded-circle '  style={{width: "30px", height: "30px"}}>
-                      <BsFillEyeFill title="Código" color={'white'} className='action mt-1 ' size={20}/>
-                    </div>
-                  </td>
-                }                        
-                {
-                  <td key={12}>
-                    <div className='bg-danger align-middle text-center rounded-circle '  style={{width: "30px", height: "30px"}}>
-                      <BsFillTrashFill title="Código" color={'white'} className='action mt-1 ' size={18}/>
-                    </div> 
-                  </td>
-                }                
+                  <td key={10}>Acción</td>
+                }                                         
               </tr>
             </thead>
             <tbody className='fontRows'>
@@ -45,26 +31,25 @@ function Tabla(props: any) {
                         }
                         {
                           <td key={10}>
-                            <a href="#!" onClick={()=> props.handlerPrint(index)}><FaPrint className='text-dark h4'/></a></td>
+                            <div className=' d-flex gap-2 align-item-center' >
+                              <a href="#!" onClick={()=> props.handlerPrint(index)}>
+                                <div className='align-middle text-center '  style={{width: "30px", height: "30px"}}>
+                                  <FaPrint className='text-dark h4'/>
+                                </div>
+                              </a>
+                              <a href="#!" onClick={()=> props.handlerEdit(index)}>
+                                <div className='bg-success align-middle text-center  rounded-circle '  style={{width: "30px", height: "30px"}}>
+                                  <BsFillEyeFill title="" color={'white'} className='mt-1 h4 '/>
+                                </div>
+                              </a>
+                              <a href="#!" onClick={()=> props.handlerEdit(index)}>
+                                <div className='bg-danger align-middle text-center  rounded-circle '  style={{width: "30px", height: "30px"}}>
+                                  <BsFillTrashFill title="Código" color={'white'} className='mt-1 h5 '/>
+                                </div>
+                              </a>                                                             
+                            </div>
+                          </td>                            
                         }                         
-                        {
-                          <td key={11}>
-                            <a href="#!" onClick={()=> props.handlerEdit(index)}>
-                              <div className='bg-success align-middle text-center rounded-circle '  style={{width: "30px", height: "30px"}}>
-                                  <BsFillEyeFill title="Código" color={'white'} className='action mt-1 ' size={20}/>
-                              </div>
-                            </a>
-                          </td>
-                        }                        
-                        {
-                          <td key={12}>
-                            <a href="#!" onClick={()=> props.handlerDelete(index)}>
-                              <div className='bg-danger align-middle text-center rounded-circle '  style={{width: "30px", height: "30px"}}>
-                                <BsFillTrashFill title="Código" color={'white'} className='action mt-1 ' size={18}/>
-                              </div> 
-                            </a>
-                          </td>
-                        }
                       </tr>
                     )
                 }
