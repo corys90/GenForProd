@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
+import { FaRegFileExcel } from "react-icons/fa";
 import MsgModal from "../../../components/MsgModal";
 import EditarMaterial from "../EditarMaterial";
 import Tabla from "./Tabla";
@@ -201,7 +202,10 @@ const RegistProduccion = () => {
                             handlerDelete={handlerDeleteRegistroConsumo}
                         />
                         <div className="container-fluid text-start">
-                            <a href="#!" style={{color: "white"}} className="btn btn-success "  onClick={()=>handlerImp()}>Descargar XLS </a> 
+                            <a href="#!" style={{color: "white"}} className="btn btn-success "  onClick={()=>handlerImp()}>
+                                <FaRegFileExcel className="m-1"/>
+                                Descargar XLS 
+                            </a> 
                         </div> 
                     </form>
                 </div>

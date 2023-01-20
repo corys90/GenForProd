@@ -50,7 +50,7 @@ const FiltroConsumo = () => {
                         <label htmlFor="search" className="form-label ">Operador</label>
                         <div className= "" style={{display: "flex", flexDirection: "row"}}>
                             <input type="text" className="form-control" id="search" placeholder="search" />
-                            <Button  className="bg-success border-0" ><FaSearch/> </Button>
+                            <Button  className="bg-success border-0 ms-3" >Buscar</Button>
                         </div>
                     </div>                    
             </form>                

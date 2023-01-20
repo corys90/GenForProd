@@ -6,6 +6,7 @@ import MsgModal from "../../components/MsgModal";
 import Tabla from "../../components/Tabla";
 import EditarConsumoProduccion from "./EditarConsumoProduccion"; 
 import RegistroConsumoProduccion from "./RegistroConsumoProduccion";
+import { FaRegFileExcel } from "react-icons/fa";
 
 const dataUltimosMov: string[][] = [
     ["Prod001", "24-10-2023", "Batuco", "Fl_Bat_01", "Asserradero", "Turno 1", "Juna Pérez", "Cristian A. Cortes S."],
@@ -192,7 +193,10 @@ const PageConsprod = () => {
                         <TablaConsumoProduccion />
                         <div  style={stilo}>
                             <div className="container">
-                                <a href="#!" style={{color: "white"}} className="btn btn-success" onClick={()=>handlerImp()}>Descargar XLS </a> 
+                                <a href="#!" style={{color: "white"}} className="btn btn-success" onClick={()=>handlerImp()}>
+                                    <FaRegFileExcel className="m-1"/>
+                                    Descargar XLS 
+                                </a> 
                             </div>   
                             <div>
                                 <Paginacion active={1} />

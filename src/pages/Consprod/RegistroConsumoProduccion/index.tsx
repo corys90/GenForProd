@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
-import { FaBarcode } from "react-icons/fa";
+import { FaBarcode, FaRegFileExcel } from "react-icons/fa";
 import MsgModal from "../../../components/MsgModal";
 import MensajeModalCB from "../../../components/MsgModalCB";
 import DetalleConsumoProducion from "../DetalleConsumoProducion";
@@ -169,7 +169,10 @@ const RegistroConsumoProduccion = () => {
                             handlerDelete={handlerDeleteRegistroConsumo}
                         />
                         <div className="container-fluid text-start">
-                            <a href="#!" style={{color: "white"}} className="btn btn-success" onClick={()=>handlerImp()}>Descargar XLS </a> 
+                            <a href="#!" style={{color: "white"}} className="btn btn-success" onClick={()=>handlerImp()}>
+                                <FaRegFileExcel className="m-1"/>
+                                Descargar XLS 
+                            </a> 
                         </div> 
                     </form>
                 </div>

@@ -58,7 +58,7 @@ const FiltroProduccion = () => {
                     <label htmlFor="search" className="form-label">Buscar</label>
                     <div style={{display: "flex", flexDirection: "row"}}>
                         <input type="text" className="form-control" id="search" placeholder="Buscar" />
-                        <Button  className="bg-success border-0"><FaSearch/> </Button>
+                        <Button  className="bg-success border-0 ms-3">Buscar</Button>
                     </div>
                 </div>                    
             </form>

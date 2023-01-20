@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { FaRegFileExcel } from "react-icons/fa";
 import MsgModal from "../../../components/MsgModal";
 import Tabla from "./Tabla";
 
@@ -15,11 +16,11 @@ const Select = () =>{
 }
 
 const detalles: string[][] = [
-    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$10.000", "En Proceso"],
-    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$20.000", "En Proceso"],
-    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$30.000", "En Proceso"],
-    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$40.000", "En Proceso"],
-    ["Dental", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"]
+    ["Dental", "24-10-2023", "10:15", "En Proceso","Dental", "Turno_2", "Cristian A.", "Rodriguez Raul"],
+    ["Dental", "24-10-2023", "10:15", "En Proceso","Dental", "Turno_2", "Cristian A.", "Rodriguez Raul"],
+    ["Dental", "24-10-2023", "10:15", "En Proceso","Dental", "Turno_2", "Cristian A.", "Rodriguez Raul"],
+    ["Dental", "24-10-2023", "10:15", "En Proceso","Dental", "Turno_2", "Cristian A.", "Rodriguez Raul"],
+    ["Dental", "24-10-2023", "10:15", "En Proceso","Dental", "Turno_2", "Cristian A.", "Rodriguez Raul"]
 
 ];
 
@@ -122,7 +123,10 @@ const RegistroConsumo = () => {
                             handlerDelete={handlerDeleteRegistroConsumo}
                         />
                         <div className="container-fluid text-start">
-                            <a href="#!" style={{color: "white"}}  onClick={()=> handlerModalDescarga()} className="btn btn-success">Descargar XLS </a> 
+                            <a href="#!" style={{color: "white"}}  onClick={()=> handlerModalDescarga()} className="btn btn-success">
+                                <FaRegFileExcel className="m-1"/>
+                                Descargar XLS 
+                            </a> 
                         </div> 
                     </form>
                 </div>

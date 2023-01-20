@@ -6,20 +6,21 @@ import MsgModal from "../../components/MsgModal";
 import RegistroConsumo from "./RegistroConsumo";
 import EditarConsumo from "./EditarConsumo"; 
 import Tabla from '../../components/Tabla';
+import { FaRegFileExcel } from "react-icons/fa";
 
 const dataUltimosMov: string[][] = [
-    ["Forestal Leonera", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$10.000", "En Proceso"],
-    ["Forestal Leonera", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$20.000", "En Proceso"],
-    ["Forestal Leonera", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$30.000", "En Proceso"],
-    ["Forestal Leonera", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$40.000", "En Proceso"],
-    ["Forestal Leonera", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$50.000", "En Proceso"],
-    ["Forestal Leonera", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$60.000", "En Proceso"],
-    ["Forestal Leonera", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$70.000", "En Proceso"],
-    ["Forestal Leonera", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$80.000", "En Proceso"],
-    ["Forestal Leonera", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$90.000", "En Proceso"],
-    ["Forestal Leonera", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$11.000", "En Proceso"],
-    ["Forestal Leonera", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$22.000", "En Proceso"],
-    ["Forestal Leonera", "24-10-2023", "$50.000", "En Proceso","Dental", "24-10-2023", "$33.000", "En Proceso"]
+    ["Forestal Leonera", "24-10-2023", "08:00", "En Proceso","Dental", "Turno_1", "Raul Lara", "Cristian A."],
+    ["Forestal Leonera", "24-10-2023", "09:00", "En Proceso","Dental", "Turno_1", "Raul Lara", "Cristian A."],
+    ["Forestal Leonera", "24-10-2023", "10:00", "En Proceso","Dental", "Turno_1", "Raul Lara", "Cristian A."],
+    ["Forestal Leonera", "24-10-2023", "01:00", "En Proceso","Dental", "Turno_1", "Raul Lara", "Cristian A."],
+    ["Forestal Leonera", "24-10-2023", "02:00", "En Proceso","Dental", "Turno_1", "Raul Lara", "Cristian A."],
+    ["Forestal Leonera", "24-10-2023", "03:00", "En Proceso","Dental", "Turno_1", "Raul Lara", "Cristian A."],
+    ["Forestal Leonera", "24-10-2023", "04:00", "En Proceso","Dental", "Turno_1", "Raul Lara", "Cristian A."],
+    ["Forestal Leonera", "24-10-2023", "05:00", "En Proceso","Dental", "Turno_1", "Raul Lara", "Cristian A."],
+    ["Forestal Leonera", "24-10-2023", "06:00", "En Proceso","Dental", "Turno_1", "Raul Lara", "Cristian A."],
+    ["Forestal Leonera", "24-10-2023", "07:00", "En Proceso","Dental", "Turno_1", "Raul Lara", "Cristian A."],
+    ["Forestal Leonera", "24-10-2023", "08:00", "En Proceso","Dental", "Turno_1", "Raul Lara", "Cristian A."],
+    ["Forestal Leonera", "24-10-2023", "09:00", "En Proceso","Dental", "Turno_1", "Raul Lara", "Cristian A."]
 ];
 
 const PageConsumo = () => {
@@ -189,7 +190,10 @@ const PageConsumo = () => {
                     <TablaConsumo/>
                     <div style={stilo}>
                         <div className="container">
-                            <a href="#!" style={{color: "white"}} className="btn btn-success" onClick={()=>handlerImp()}>Descargar XLS </a> 
+                            <a href="#!" style={{color: "white"}} className="btn btn-success" onClick={()=>handlerImp()}>
+                                <FaRegFileExcel className="m-1"/>
+                                Descargar XLS
+                            </a> 
                         </div>   
                         <div>
                             <Paginacion active={1} />
