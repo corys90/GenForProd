@@ -1,7 +1,6 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
 import { BsFillPencilFill, BsFillTrashFill } from 'react-icons/bs';
-import { FaPrint, FaTrashAlt } from 'react-icons/fa';
+import { FaPrint } from 'react-icons/fa';
 import './style.css';
 
 function Tabla(props: any) {
@@ -12,7 +11,7 @@ function Tabla(props: any) {
           {props.header}  
         </div>
         <div className='table-responsive'>
-          <Table striped bordered hover className='sombra'>
+          <table className='table table-hover'>
             <thead  className='fontColumnHeader' >
               <tr >
                 {
@@ -69,7 +68,7 @@ function Tabla(props: any) {
                     )
                 }
             </tbody>
-          </Table>
+          </table>
         </div>
     </div> 
   );

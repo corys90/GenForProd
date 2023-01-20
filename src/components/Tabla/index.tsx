@@ -1,5 +1,4 @@
 import {BsFillTrashFill, BsFillEyeFill, BsFillPencilFill} from "react-icons/bs"
-import { Table } from 'react-bootstrap';
 import './style.css';
 
 function Tabla(props: any) {
@@ -10,8 +9,8 @@ function Tabla(props: any) {
           {props.header}  
         </div>
         <div className='table-responsive'>
-          <Table  className='sombra'>
-            <thead className='fontColumnHeader' >
+          <table  className='table  table-hover'>
+            <thead>
               <tr >
                 {
                   props.columHeader.map((title: string, index: number) => <th className='text-center fw-bold ' key={index}>{title}</th>)
@@ -39,12 +38,12 @@ function Tabla(props: any) {
                 } 
               </tr>
             </thead>
-            <tbody className='fontRows'>
+            <tbody>
                 {
                     props.data.map((data: string[], index: number) => 
                       <tr key={index}>
                         {
-                          data.map((value: string, index: number)=> <td key={index}>{value}</td>)
+                          data.map((value: string, index: number)=> <td className='fontRows' key={index}>{value}</td>)
                         }
                         {
                           <td key={9} className='text-center' >
@@ -77,7 +76,7 @@ function Tabla(props: any) {
                     )
                 }
             </tbody>
-          </Table>
+          </table>
         </div>
     </div> 
   );

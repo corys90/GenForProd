@@ -1,6 +1,5 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-
 import './style.css';
 
 function Tabla(props: any) {

@@ -1,30 +1,18 @@
 .fontTitle{
-  font-family: 'Ubuntu';
-  font-style: normal;
-  font-weight: 700;
+  font-family:  system-ui, -apple-system, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
-  line-height: 36px;
   letter-spacing: 0.1em;
   color: #2B2B2B;
 }
 
 .fontColumnHeader{
-  font-family: 'Ubuntu';
-  font-style: normal;
-  font-weight: 700;
+  font-family:  system-ui, -apple-system, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.1em;
-  color: #2B2B2B;
 }
 
 .fontRows{
-  font-family: 'Ubuntu';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.1em;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
   color: #2B2B2B;
 }
 
