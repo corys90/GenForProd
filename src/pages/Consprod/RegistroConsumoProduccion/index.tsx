@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { FaBarcode, FaRegFileExcel } from "react-icons/fa";
+import ModelBar from "../../../components/ModelBar";
 import MsgModal from "../../../components/MsgModal";
-import MensajeModalCB from "../../../components/MsgModalCB";
+//import MensajeModalCB from "../../../components/MsgModalCB";
 import DetalleConsumoProducion from "../DetalleConsumoProducion";
 import Tabla from "./Tabla";
 
@@ -187,9 +188,10 @@ const RegistroConsumoProduccion = () => {
                     handlerCancel={handlerMsgModalImpCancel}
                     handlerAccept={handlerMsgModalImpAccept}
                 />      
-                <MensajeModalCB show={MsgDialogImpCB}
-                    mensaje="Capturar Lote"
-                    handlerAccept={handlerMsgModalImpConfirmar}
+                <ModelBar show={MsgDialogImpCB}
+                    message=""
+                    title="Capturar Lote"
+                    close={handlerMsgModalImpConfirmar}
                 />                              
            </div>
         </>

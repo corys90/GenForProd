@@ -19,7 +19,7 @@ function MensajeModal(props: {show: boolean, mensaje: string, handlerCancel: any
                         <Button type="button" className="btn-md btn-secondary me-3" onClick={() => props.handlerCancel()}>
                             Cancelar
                         </Button>
-                        <Button type="button" className="ms-3 btn-md btn-success" onClick={() => props.handlerAccept()}>
+                        <Button type="button" className="ms-3 btn-md btn btn-success bg-primario " onClick={() => props.handlerAccept()}>
                             Aceptar
                         </Button>
                 </Modal.Footer>

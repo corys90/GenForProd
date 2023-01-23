@@ -7,6 +7,7 @@ import Tabla from "../../components/Tabla";
 import RegistroProduccion from "./RegistroProduccion";
 import EditarProduccion from "./EditarProduccion"; 
 import { FaRegFileExcel } from "react-icons/fa";
+import "../../index.css";
 
 const dataUltimosMov: string[][] = [
     ["Prod001", "24-10-2023", "Batuco", "Fl_Bat_01", "Asserradero", "Máquina_1", "Línea 1", "Turno 1", "Juna Pérez", "Cristian A. Cortes S."],
@@ -75,7 +76,7 @@ const PageProduccion = () => {
                         <RegistroProduccion />
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button className="btn-success " onClick={() => props.handlerHide()}>
+                        <Button className="btn btn-success bg-primario " onClick={() => props.handlerHide()}>
                             Aceptar
                         </Button>
                         <Button  className=" btn-secondary " onClick={() => props.handlerHide()}>
@@ -101,7 +102,7 @@ const PageProduccion = () => {
                         <EditarProduccion />
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button className="btn-success " onClick={() => props.handlerHide()}>
+                        <Button className="btn btn-success bg-primario " onClick={() => props.handlerHide()}>
                             Aceptar
                         </Button>
                         <Button  className=" btn-secondary " onClick={() => props.handlerHide()}>
@@ -118,7 +119,7 @@ const PageProduccion = () => {
         return(
             <div>
                     <div className="d-flex m-3">
-                        <Button className="btn-success " onClick={()=>{setMostrar(true)}}>Nueva Producción</Button> 
+                        <Button className="btn btn-success bg-primario " onClick={()=>{setMostrar(true)}}>Nueva Producción</Button> 
                     </div>
                     <Tabla 
                         header="Registro de Producción"
@@ -193,7 +194,7 @@ const PageProduccion = () => {
                     <TablaProduccion />
                     <div style={stilo}>
                         <div className="container">
-                            <a href="#!" style={{color: "white"}} className="btn btn-success" onClick={()=>handlerImp()}>
+                            <a href="#!" style={{color: "white"}} className="btn btn-success bg-primario" onClick={()=>handlerImp()}>
                                 <FaRegFileExcel className="m-1"/>
                                 Descargar XLS 
                             </a> 

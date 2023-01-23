@@ -42,7 +42,7 @@ function Tabla(props: any) {
                                   <BsFillEyeFill title="" color={'white'} className='mt-1 h4 '/>
                                 </div>
                               </a>
-                              <a href="#!" onClick={()=> props.handlerEdit(index)}>
+                              <a href="#!" onClick={()=> props.handlerDelete(index)}>
                                 <div className='bg-danger align-middle text-center  rounded-circle '  style={{width: "30px", height: "30px"}}>
                                   <BsFillTrashFill title="Código" color={'white'} className='mt-1 h5 '/>
                                 </div>

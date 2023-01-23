@@ -53,12 +53,16 @@ const FiltroProduccion = () => {
                 <div className="col-3">
                     <label htmlFor="turno" className="form-label">Turno</label>
                     <Select/>
-                </div>                        
+                </div>        
+                <div className="col-3">
+                </div>  
+                <div className="col-3">
+                </div>                                                  
                 <div className="col-3">
                     <label htmlFor="search" className="form-label">Buscar</label>
                     <div style={{display: "flex", flexDirection: "row"}}>
                         <input type="text" className="form-control" id="search" placeholder="Buscar" />
-                        <Button  className="bg-success border-0 ms-3">Buscar</Button>
+                        <Button  className="btn btn-success bg-primario  ms-3">Buscar</Button>
                     </div>
                 </div>                    
             </form>

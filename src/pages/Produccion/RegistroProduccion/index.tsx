@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
-import { FaRegFileExcel } from "react-icons/fa";
+import { FaPrint, FaRegFileExcel } from "react-icons/fa";
 import MsgModal from "../../../components/MsgModal";
 import EditarMaterial from "../EditarMaterial";
 import Tabla from "./Tabla";
@@ -47,7 +47,7 @@ const RegistProduccion = () => {
                         <EditarMaterial/>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button className="btn-success " onClick={() => props.handlerHide()}>
+                        <Button className="btn btn-success bg-primario " onClick={() => props.handlerHide()}>
                             Aceptar
                         </Button>
                         <Button  className=" btn-secondary " onClick={() => props.handlerHide()}>
@@ -104,7 +104,6 @@ const RegistProduccion = () => {
         setMsgDialogImpLote(false);
     }   
     
-
     const handlerImpLote = () =>{ 
         setMsgDialogImpLote(true);
     }  
@@ -191,7 +190,7 @@ const RegistProduccion = () => {
                             <Select/>
                         </div>                              
                         <div className="col-2 ">
-                            <Button className="btn-success  mt-4" style={{width: "100%"}}>Nuevo detalle</Button>
+                            <Button className="btn btn-success bg-primario mt-4" style={{width: "100%"}}>Nuevo detalle</Button>
                         </div>
                         <div className="mt-3"></div>
                         <Tabla  
@@ -201,12 +200,13 @@ const RegistProduccion = () => {
                             handlerEdit={handlerEditarRegistroConsumo}
                             handlerDelete={handlerDeleteRegistroConsumo}
                         />
-                        <div className="container-fluid text-start">
-                            <a href="#!" style={{color: "white"}} className="btn btn-success "  onClick={()=>handlerImp()}>
+                        <div>
+                            <a href="#!" style={{color: "white"}} className="btn btn-success bg-primario "  onClick={()=>handlerImp()}>
                                 <FaRegFileExcel className="m-1"/>
                                 Descargar XLS 
-                            </a> 
-                        </div> 
+                            </a>
+                        </div>
+
                     </form>
                 </div>
                 <ModalEditarMaterial show={editMaterial} handlerHide={() => handleBtnCloseEditarMaterial()}/>

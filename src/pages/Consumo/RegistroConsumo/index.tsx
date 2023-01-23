@@ -98,19 +98,19 @@ const RegistroConsumo = () => {
                     <form className=' row p-3'>
                         <label  className='mb-2'><h5 className='fw-bold' >Detalle consumo</h5></label>
                         <div className="col-3">
-                            <label htmlFor="nconsumo" className="form-label">N° Consumo</label>
-                            <input type="text" className="form-control" id="fdenconsumosde" placeholder="N° de consumo" />
-                        </div>
-                        <div className="col-3">
-                            <label htmlFor="fechaConsumo" className="form-label">Fecha</label>
-                            <input type="date" className="form-control" id="fechaConsumo" placeholder="" />
-                        </div>
-                        <div className="col-3">
-                            <label htmlFor="hora" className="form-label">Hora</label>
+                            <label htmlFor="linea" className="form-label">Código</label>
                             <Select/>
                         </div>
                         <div className="col-3">
-                            <label htmlFor="linea" className="form-label">Línea</label>
+                            <label htmlFor="linea" className="form-label">Material</label>
+                            <Select/>
+                        </div>
+                        <div className="col-3">
+                            <label htmlFor="hora" className="form-label">Tipo</label>
+                            <Select/>
+                        </div>
+                        <div className="col-3">
+                            <label htmlFor="linea" className="form-label">Cantidad</label>
                             <Select/>
                         </div>
                         <div className="col-2 mt-3">
@@ -118,7 +118,7 @@ const RegistroConsumo = () => {
                         </div>
                         <Tabla 
                             header=""
-                            columHeader={["N° Consumo", "Fecha", "Hora", "Centro","Máquina", "Turno", "Jefe Turno", "Operador"]}
+                            columHeader={["Código", "Material", "Hora", "Largo","Corteza", "Manchado", "Calidad", "Cantidad"]}
                             data={detalles}
                             handlerDelete={handlerDeleteRegistroConsumo}
                         />

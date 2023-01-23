@@ -7,6 +7,7 @@ import RegistroConsumo from "./RegistroConsumo";
 import EditarConsumo from "./EditarConsumo"; 
 import Tabla from '../../components/Tabla';
 import { FaRegFileExcel } from "react-icons/fa";
+import "../../index.css";
 
 const dataUltimosMov: string[][] = [
     ["Forestal Leonera", "24-10-2023", "08:00", "En Proceso","Dental", "Turno_1", "Raul Lara", "Cristian A."],
@@ -75,7 +76,7 @@ const PageConsumo = () => {
                         <RegistroConsumo />
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button className="btn-success " onClick={() => props.handlerHide()}>
+                        <Button className="btn btn-success bg-primario " onClick={() => props.handlerHide()}>
                             Aceptar
                         </Button>
                         <Button  className=" btn-secondary " onClick={() => props.handlerHide()}>
@@ -101,7 +102,7 @@ const PageConsumo = () => {
                         <EditarConsumo />
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button  className="btn-success " onClick={() => props.handlerHide()}>
+                    <Button  className="btn btn-success bg-primario " onClick={() => props.handlerHide()}>
                             Aceptar
                         </Button>
                         <Button className=" btn-secondary " onClick={() => props.handlerHide()}>
@@ -117,7 +118,7 @@ const PageConsumo = () => {
         return(
             <div>
                     <div className="d-flex m-3">
-                        <Button className="btn-success" onClick={()=>{setMostrar(true)}}>Nuevo Consumo</Button> 
+                        <Button className="btn btn-success bg-primario " onClick={()=>{setMostrar(true)}}>Nuevo Consumo</Button> 
                     </div>
                     <Tabla 
                         header="Consumo de Trozos"
@@ -190,7 +191,7 @@ const PageConsumo = () => {
                     <TablaConsumo/>
                     <div style={stilo}>
                         <div className="container">
-                            <a href="#!" style={{color: "white"}} className="btn btn-success" onClick={()=>handlerImp()}>
+                            <a href="#!" style={{color: "white"}} className="btn btn-success bg-primario " onClick={()=>handlerImp()}>
                                 <FaRegFileExcel className="m-1"/>
                                 Descargar XLS
                             </a> 

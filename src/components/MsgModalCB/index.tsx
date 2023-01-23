@@ -1,5 +1,6 @@
 import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
+import {ImBarcode} from "react-icons/im";
 import './style.css';
 
 function MensajeModalCB(props: {show: boolean, mensaje: string, handlerAccept: any}) {
@@ -17,12 +18,12 @@ function MensajeModalCB(props: {show: boolean, mensaje: string, handlerAccept: a
                 <Modal.Body>
                     <form className='row p-3'>
                         <div className="col-12">
-                            <input type="text" className="form-control" id="oc" placeholder="" />
+                            <textarea rows={5} className="w-100"></textarea>
                         </div>              
                     </form>
                 </Modal.Body>
                 <Modal.Footer className='mx-auto'>
-                    <Button type="button" className="ms-3 btn-md btn-success" onClick={() => props.handlerAccept()}>
+                    <Button type="button" className="ms-3 btn-md btn btn-success bg-primario " onClick={() => props.handlerAccept()}>
                         Confirmar
                     </Button>
                 </Modal.Footer>
