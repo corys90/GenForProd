@@ -47,11 +47,11 @@ const RegistProduccion = () => {
                         <EditarMaterial/>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button className="btn btn-success bg-primario " onClick={() => props.handlerHide()}>
-                            Aceptar
-                        </Button>
                         <Button  className=" btn-secondary " onClick={() => props.handlerHide()}>
-                            Cancelar
+                            Salir
+                        </Button>
+                        <Button className="btn btn-success bg-primario " onClick={() => props.handlerHide()}>
+                            Guardar
                         </Button>
                     </Modal.Footer>
                 </Modal>
