@@ -66,8 +66,8 @@ const PageProduccion = () => {
 
         return (
             <div>
-                <Modal show={props.show} centered={true} size="xl" >
-                    <Modal.Header >
+                <Modal show={props.show} centered={true} size="xl" onHide={props.handlerHide}>
+                    <Modal.Header closeButton>
                         <Modal.Title>
                                 <h3>Registrar Producción</h3>
                         </Modal.Title>
@@ -92,9 +92,9 @@ const PageProduccion = () => {
 
         return (
             <div>
-                <Modal show={props.show} centered={true} size="lg" className="bg-dark" style={{opacity: "90%"}}>
-                    <Modal.Header >
-                        <Modal.Title >
+                <Modal  onHide={props.handlerHide} show={props.show} centered={true} size="lg" className="bg-dark" style={{opacity: "90%"}}>
+                    <Modal.Header  closeButton >
+                        <Modal.Title>
                                 <h3>Editar Producción</h3>
                         </Modal.Title>
                     </Modal.Header>

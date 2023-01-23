@@ -37,8 +37,8 @@ const RegistProduccion = () => {
 
         return (
             <div>
-                <Modal show={props.show} centered={true} size="lg" className="bg-secondary" style={{opacity: "95%"}}>
-                    <Modal.Header >
+                <Modal  onHide={props.handlerHide} show={props.show} centered={true} size="lg" className="bg-secondary" style={{opacity: "95%"}}>
+                    <Modal.Header closeButton >
                         <Modal.Title >
                                 <h3>Editar Material</h3>
                         </Modal.Title>

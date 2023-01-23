@@ -8,7 +8,7 @@ function MensajeModal(props: {show: boolean, mensaje: string, handlerCancel: any
   return (
       <div>
             <Modal show={props.show} centered={true} >
-                <Modal.Header >
+                <Modal.Header  >
                     <Modal.Title className=' text-center'>
                         {                        
                             props.mensaje
